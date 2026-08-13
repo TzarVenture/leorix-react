@@ -7,6 +7,7 @@ import TheApproachSection from '../components/home/TheApproachSection';
 import ValidationProofSection from '../components/home/ValidationProofSection';
 import HeroProductFeature from '../components/home/HeroProductFeature';
 import CollectionPreview from '../components/home/CollectionPreview';
+import EditorialGridSection from '../components/home/EditorialGridSection';
 import SocialProofStrip from '../components/home/SocialProofStrip';
 import ConversionBlock from '../components/home/ConversionBlock';
 
@@ -40,6 +41,9 @@ const HomePage = () => {
 
       {/* Module 6: Collection Preview */}
       <CollectionPreview />
+
+      {/* Module 6.5: Editorial Collection Grid (WearComet Inspired) */}
+      <EditorialGridSection />
 
       {/* Module 7: Social Proof Strip (FDDI Credibility) */}
       <SocialProofStrip />

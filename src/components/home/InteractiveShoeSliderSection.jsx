@@ -137,7 +137,13 @@ const InteractiveShoeSliderSection = () => {
 
               {/* Price + CTA */}
               <div className="flex items-center gap-3">
-                <span className="font-sans font-bold text-2xl text-brand-ink">₹5,999</span>
+                {mode === 'phaseA' ? (
+                  <span className="text-[11px] font-mono font-bold text-brand-green bg-brand-green/10 px-3 py-2 rounded-full uppercase tracking-wider">
+                    Phase A Pre-launch
+                  </span>
+                ) : (
+                  <span className="font-sans font-bold text-2xl text-brand-ink">₹5,999</span>
+                )}
                 {mode === 'phaseA' ? (
                   <Link
                     to="/product/leorix-article-x"
@@ -264,7 +270,9 @@ const InteractiveShoeSliderSection = () => {
                             isActive ? 'border-brand-tan/30 text-brand-tan' : 'border-stone-200 text-brand-stone'
                           }`}
                         >
-                          <span className="text-xs">₹5,999</span>
+                          <span className="text-xs">
+                            {mode === 'phaseA' ? 'Pre-launch' : '₹5,999'}
+                          </span>
                           <span className="flex items-center gap-1 uppercase tracking-wider">
                             {isActive ? 'Active' : 'Select'} <ArrowRight className="w-3.5 h-3.5" />
                           </span>

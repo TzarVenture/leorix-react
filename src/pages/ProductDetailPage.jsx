@@ -86,9 +86,15 @@ const ProductDetailPage = () => {
 
             {/* Price Box */}
             <div className="py-3 border-y border-brand-stone/20 flex items-center justify-between">
-              <span className="font-sans font-bold text-3xl text-brand-ink">
-                {product.price}
-              </span>
+              {mode === 'phaseA' ? (
+                <span className="text-xs font-mono bg-brand-green/10 text-brand-green px-3.5 py-1.5 rounded-full font-bold uppercase tracking-wider">
+                  Phase A Pre-Launch Mode
+                </span>
+              ) : (
+                <span className="font-sans font-bold text-3xl text-brand-ink">
+                  {product.price}
+                </span>
+              )}
               <span className="text-[11px] font-mono bg-brand-green/10 text-brand-green px-3 py-1.5 rounded-full font-bold uppercase">
                 Free Shipping Across India
               </span>

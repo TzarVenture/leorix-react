@@ -1,6 +1,15 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle } from 'lucide-react';
+import { ShieldCheck, Layers, FileText, Cpu, Activity, UserCheck, Award } from 'lucide-react';
 import { FDDI_ENGAGEMENT_SCOPE } from '../../data/fddiSpecs';
+
+const scopeIcons = {
+  'scope-1': Layers,
+  'scope-2': FileText,
+  'scope-3': Cpu,
+  'scope-4': Activity,
+  'scope-5': UserCheck,
+  'scope-6': Award,
+};
 
 const SocialProofStrip = () => {
   return (
@@ -34,19 +43,22 @@ const SocialProofStrip = () => {
 
           {/* Compact 6 Deliverables Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {FDDI_ENGAGEMENT_SCOPE.map((item) => (
-              <div key={item.id} className="bg-brand-green p-4 rounded-2xl border border-brand-tan/15 flex items-start gap-3">
-                <CheckCircle className="w-4 h-4 text-brand-tan flex-shrink-0 mt-0.5" />
-                <div className="space-y-0.5">
-                  <h4 className="font-sans font-bold text-xs uppercase tracking-wide text-brand-cream">
-                    {item.title}
-                  </h4>
-                  <p className="text-[10px] sm:text-xs text-brand-cream/70 leading-relaxed font-sans">
-                    {item.desc}
-                  </p>
+            {FDDI_ENGAGEMENT_SCOPE.map((item) => {
+              const IconComponent = scopeIcons[item.id] || Layers;
+              return (
+                <div key={item.id} className="bg-brand-green p-4 rounded-2xl border border-brand-tan/15 flex items-start gap-3 hover:border-brand-tan/40 transition-colors">
+                  <IconComponent className="w-4 h-4 text-brand-tan flex-shrink-0 mt-0.5" />
+                  <div className="space-y-0.5">
+                    <h4 className="font-sans font-bold text-xs uppercase tracking-wide text-brand-cream">
+                      {item.title}
+                    </h4>
+                    <p className="text-[10px] sm:text-xs text-brand-cream/70 leading-relaxed font-sans">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
