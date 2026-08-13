@@ -104,12 +104,20 @@ const CollectionPreview = () => {
 
               <div className="pt-4 border-t border-stone-200 flex items-center justify-between">
                 <div>
-                  <span className="font-sans font-bold text-xl text-brand-ink block">
-                    {product.price}
-                  </span>
-                  <span className="text-[9px] font-mono text-brand-stone uppercase font-semibold">
-                    {mode === 'phaseA' ? 'Pre-launch' : 'In Stock'}
-                  </span>
+                  {mode === 'phaseA' ? (
+                    <span className="text-[10px] font-mono font-bold text-brand-green bg-brand-green/10 px-3 py-1 rounded-full uppercase tracking-wider block">
+                      Phase A Pre-launch
+                    </span>
+                  ) : (
+                    <>
+                      <span className="font-sans font-bold text-xl text-brand-ink block">
+                        {product.price}
+                      </span>
+                      <span className="text-[9px] font-mono text-brand-stone uppercase font-semibold">
+                        In Stock
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 {mode === 'phaseA' ? (

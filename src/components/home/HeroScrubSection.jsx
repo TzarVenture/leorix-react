@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useStore } from '../../context/StoreContext';
 import { HERO_PRODUCT } from '../../data/products';
 import heroBg from '../../../img/hero_Bg.png';
+import heroMobileBg from '../../../img/hero_mobile_bg.png';
 
 const HeroScrubSection = () => {
   const { mode } = useStore();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const activeColor = HERO_PRODUCT.colors[activeIndex];
 
   const handlePrev = () => {
@@ -18,15 +20,22 @@ const HeroScrubSection = () => {
     setActiveIndex((prev) => (prev === HERO_PRODUCT.colors.length - 1 ? 0 : prev + 1));
   };
 
+  // Auto-slide colorways every 4 seconds (pauses on hover/touch)
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      handleNext();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isPaused, activeIndex]);
+
   return (
     <section
-      className="relative w-full h-[calc(100vh-88px)] sm:h-[calc(100vh-92px)] min-h-[480px] max-h-[850px] bg-brand-green text-brand-cream overflow-hidden flex flex-col justify-between"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="relative w-full overflow-hidden bg-brand-green text-brand-cream"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
     >
       {/* Pendulum animation keyframes */}
       <style dangerouslySetInnerHTML={{
@@ -55,25 +64,77 @@ const HeroScrubSection = () => {
         }
       `}} />
 
-      {/* ── Headline Block — Top Center (Equalized Spacing from Navbar) ── */}
-      <div className="relative z-20 flex-shrink-0 flex flex-col items-center justify-center text-center px-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12 space-y-3 sm:space-y-4">
-        
-        {/* Single Line Main Heading on Desktop/Laptop */}
-        <h1 className="font-sans font-black text-lg sm:text-2xl md:text-3xl lg:text-[2.2rem] xl:text-[2.6rem] 2xl:text-[2.85rem] tracking-tight text-brand-cream uppercase leading-tight max-w-full sm:whitespace-nowrap">
-          Looks Designed. Built to Be Proven.
-        </h1>
+      {/* ─────────────────────────────────────────────────────────────
+          📱 MOBILE HERO (visible on screens < 768px / md:hidden)
+          Uses hero_mobile_bg.png background matching inspiration image
+      ───────────────────────────────────────────────────────────── */}
+      <div
+        className="md:hidden relative w-full min-h-[calc(100vh-88px)] flex flex-col justify-between items-center text-center px-4 py-5 select-none"
+        style={{
+          backgroundImage: `url(${heroMobileBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Mobile Top: Heading & Subheading (Equalized Top Buffer from Navbar) */}
+        <div className="relative z-20 flex flex-col items-center space-y-3 pt-6 xs:pt-8">
+          <h1 className="font-sans font-black text-2xl xs:text-[1.75rem] text-brand-cream uppercase leading-[1.08] tracking-tight max-w-xs xs:max-w-sm drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+            Looks Designed. Built to Be Proven.
+          </h1>
+          <p className="font-sans text-md xs:text-sm text-brand-tan font-medium max-w-xs xs:max-w-sm leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            Where refined design meets engineering precision, tested and validated for everyday performance.
+          </p>
+        </div>
 
-        {/* Subheading with Balanced Spacing */}
-        <p className="font-sans text-xs sm:text-sm md:text-base lg:text-lg text-brand-tan font-medium max-w-xl sm:max-w-2xl md:max-w-3xl leading-snug sm:leading-relaxed">
-          Where refined design meets engineering precision, tested and validated for everyday performance.
-        </p>
+        {/* Mobile Middle: Centered Shoe Stage positioned slightly higher */}
+        <div className="relative z-10 w-full flex items-center justify-between gap-1 px-1 my-auto">
+          {/* Left Arrow */}
+          <button
+            onClick={handlePrev}
+            className="flex-shrink-0 p-2.5 rounded-full bg-brand-ink/80 border border-brand-tan/30 text-brand-cream active:scale-90 transition-all shadow-lg z-30 translate-y-4"
+            aria-label="Previous Colorway"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
 
-        {/* Dynamic Brand CTA Button (Phase A vs Phase B) */}
-        <div className="pt-2 sm:pt-3">
+          {/* Centered Shoe Graphic — Positioned with outer hover wrapper */}
+          <div className="relative flex-1 flex items-end justify-center min-h-[230px]">
+            <div className="transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2 cursor-pointer">
+              <img
+                key={`mobile-${activeColor.code}`}
+                src={activeColor.image}
+                alt={`LEORIX Article X — ${activeColor.name}`}
+                className="pendulum-enter w-full max-w-[300px] xs:max-w-[340px] sm:max-w-[380px] max-h-[280px] object-contain select-none translate-y-7 xs:translate-y-9"
+                style={{
+                  filter: 'drop-shadow(0 18px 32px rgba(0,0,0,0.65))'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={handleNext}
+            className="flex-shrink-0 p-2.5 rounded-full bg-brand-ink/80 border border-brand-tan/30 text-brand-cream active:scale-90 transition-all shadow-lg z-30 translate-y-4"
+            aria-label="Next Colorway"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Mobile Bottom: CTA Button placed below shoe stage & Colorway badge */}
+        <div className="relative z-20 flex flex-col items-center space-y-3 pb-3">
+          {/* Colorway Pill */}
+          <span className="bg-brand-ink/90 border border-brand-tan/40 text-[10px] font-mono text-brand-tan px-3.5 py-1 rounded-full uppercase tracking-widest whitespace-nowrap shadow-md backdrop-blur-md">
+            {activeColor.name}
+          </span>
+
+          {/* Dynamic Brand CTA Button */}
           {mode === 'phaseA' ? (
             <Link
               to="/vault"
-              className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-lg border border-brand-tan/40"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream active:scale-95 transition-all shadow-xl border border-brand-tan/40"
             >
               <span>Join Early Access</span>
               <ArrowRight className="w-4 h-4" />
@@ -81,52 +142,98 @@ const HeroScrubSection = () => {
           ) : (
             <Link
               to="/shop/men"
-              className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-lg border border-brand-tan/40"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream active:scale-95 transition-all shadow-xl border border-brand-tan/40"
             >
               <span>Shop Article X</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           )}
         </div>
-
       </div>
 
-      {/* ── Shoe Stage — Centered & Resting Flush at Bottom Edge ── */}
-      <div className="relative z-10 flex-1 min-h-0 flex items-end justify-center px-3 sm:px-8 md:px-12 gap-2 sm:gap-6 pb-0 overflow-hidden">
+      {/* ─────────────────────────────────────────────────────────────
+          💻 DESKTOP HERO (visible on screens >= 768px / hidden md:flex)
+          Completely unaltered desktop version with hover animation
+      ───────────────────────────────────────────────────────────── */}
+      <div
+        className="hidden md:flex relative w-full h-[calc(100vh-88px)] sm:h-[calc(100vh-92px)] min-h-[480px] max-h-[850px] flex-col justify-between"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* ── Headline Block — Top Center (Equalized Spacing from Navbar) ── */}
+        <div className="relative z-20 flex-shrink-0 flex flex-col items-center justify-center text-center px-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12 space-y-3 sm:space-y-4">
+          {/* Single Line Main Heading on Desktop/Laptop */}
+          <h1 className="font-sans font-black text-lg sm:text-2xl md:text-3xl lg:text-[2.2rem] xl:text-[2.6rem] 2xl:text-[2.85rem] tracking-tight text-brand-cream uppercase leading-tight max-w-full sm:whitespace-nowrap">
+            Looks Designed. Built to Be Proven.
+          </h1>
 
-        {/* Left Arrow */}
-        <button
-          onClick={handlePrev}
-          className="flex-shrink-0 self-center p-2.5 sm:p-3.5 rounded-full bg-brand-ink/70 border border-brand-tan/30 text-brand-cream hover:bg-brand-tan hover:text-brand-green hover:scale-110 active:scale-95 transition-all shadow-xl select-none z-30"
-          aria-label="Previous Colorway"
-        >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
+          {/* Subheading with Balanced Spacing */}
+          <p className="font-sans text-xs sm:text-sm md:text-base lg:text-lg text-brand-tan font-medium max-w-xl sm:max-w-2xl md:max-w-3xl leading-snug sm:leading-relaxed">
+            Where refined design meets engineering precision, tested and validated for everyday performance.
+          </p>
 
-        {/* Centered Shoe Container — Proportionally sized for cropped PNGs */}
-        <div className="relative flex items-end justify-center flex-1 max-w-2xl sm:max-w-3xl lg:max-w-4xl h-full min-h-0">
-          <img
-            key={activeColor.code}
-            src={activeColor.image}
-            alt={`LEORIX Article X — ${activeColor.name}`}
-            className="pendulum-enter w-auto max-w-[260px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[580px] xl:max-w-[660px] max-h-[26vh] sm:max-h-[32vh] md:max-h-[36vh] lg:max-h-[40vh] object-contain object-bottom select-none translate-y-0.5"
-            style={{
-              filter: 'drop-shadow(0 16px 28px rgba(0,0,0,0.50))'
-            }}
-          />
+          {/* Dynamic Brand CTA Button (Phase A vs Phase B) */}
+          <div className="pt-2 sm:pt-3">
+            {mode === 'phaseA' ? (
+              <Link
+                to="/vault"
+                className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-lg border border-brand-tan/40"
+              >
+                <span>Join Early Access</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            ) : (
+              <Link
+                to="/shop/men"
+                className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-lg border border-brand-tan/40"
+              >
+                <span>Shop Article X</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            )}
+          </div>
         </div>
 
-        {/* Right Arrow */}
-        <button
-          onClick={handleNext}
-          className="flex-shrink-0 self-center p-2.5 sm:p-3.5 rounded-full bg-brand-ink/70 border border-brand-tan/30 text-brand-cream hover:bg-brand-tan hover:text-brand-green hover:scale-110 active:scale-95 transition-all shadow-xl select-none z-30"
-          aria-label="Next Colorway"
-        >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
+        {/* ── Shoe Stage — Centered & Resting Flush at Bottom Edge ── */}
+        <div className="relative z-10 flex-1 min-h-0 flex items-end justify-center px-3 sm:px-8 md:px-12 gap-2 sm:gap-6 pb-0 overflow-hidden">
+          {/* Left Arrow */}
+          <button
+            onClick={handlePrev}
+            className="flex-shrink-0 self-center p-2.5 sm:p-3.5 rounded-full bg-brand-ink/70 border border-brand-tan/30 text-brand-cream hover:bg-brand-tan hover:text-brand-green hover:scale-110 active:scale-95 transition-all shadow-xl select-none z-30"
+            aria-label="Previous Colorway"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
 
+          {/* Centered Shoe Container with outer Hover Wrapper */}
+          <div className="relative flex items-end justify-center flex-1 max-w-2xl sm:max-w-3xl lg:max-w-4xl h-full min-h-0">
+            <div className="transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-3 cursor-pointer">
+              <img
+                key={`desktop-${activeColor.code}`}
+                src={activeColor.image}
+                alt={`LEORIX Article X — ${activeColor.name}`}
+                className="pendulum-enter w-auto max-w-[260px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[580px] xl:max-w-[660px] max-h-[26vh] sm:max-h-[32vh] md:max-h-[36vh] lg:max-h-[40vh] object-contain object-bottom select-none translate-y-0.5"
+                style={{
+                  filter: 'drop-shadow(0 16px 28px rgba(0,0,0,0.50))'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={handleNext}
+            className="flex-shrink-0 self-center p-2.5 sm:p-3.5 rounded-full bg-brand-ink/70 border border-brand-tan/30 text-brand-cream hover:bg-brand-tan hover:text-brand-green hover:scale-110 active:scale-95 transition-all shadow-xl select-none z-30"
+            aria-label="Next Colorway"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+        </div>
       </div>
-
     </section>
   );
 };
