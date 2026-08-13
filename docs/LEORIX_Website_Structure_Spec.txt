@@ -1,0 +1,148 @@
+LEORIX — Website Structure Specification
+Scope of this document: site architecture only — page tree, navigation, homepage module
+sequence, and the structural slots the brand positioning requires. Copy, imagery, product
+designs, and claims are explicitly out of scope and to be written later. This is a build hand-
+off, not a content brief.
+Positioning the structure must serve: design-led, engineering-backed, measurable
+performance. Proof before product. Every structural decision below follows from that.
+0. The one decision that gates everything: Mode
+The current build runs two architectures at once — a pre-launch waitlist site and a live
+commerce store. They compete. Pick the mode first; the structure below is designed for a
+phased path so you don’t rebuild later.
+Phase A — Pre-launch (now): drop not live, FDDI validation in progress, products not
+finalized. Primary action = join waitlist. Commerce surfaces (cart, checkout, prices,
+discount codes) are hidden/disabled.
+Phase B — Live commerce (at drop): Primary action = buy. Waitlist block converts to
+early-access/membership. Commerce surfaces switch on.
+The sitemap is identical across both phases. Only the primary CTA, the homepage’s final
+section, and the visibility of commerce elements change. Build once, toggle at drop.
+1. Sitemap (page tree)
+HOME
+SHOP
+├── Men            (real collection — must NOT route to the same URL as Women)
+├── Women          (real collection — distinct catalog)
+└── The Vault      (define role — see §4)
+TECHNOLOGY  ← NEW, top-level. The positioning lives here.
+├── The Approach        (engineering philosophy / how a Leorix shoe is built)
+├── Validation          (FDDI biomechanical + durability data, as it lands)
+Navigation notes
+Primary nav: Shop (Men / Women / The Vault) · Technology · About. Keep it to these
+three pillars. Technology earns top-level placement because it is the differentiator — it
+cannot stay buried in a homepage carousel.
+Men / Women must be genuinely separate collections. Today both point to
+/collections/products. The nav promises segmentation the catalog doesn’t deliver.
+Footer carries utility/legal + waitlist. No dead # anchors — every link resolves or is
+removed until its page exists.
+2. Homepage module sequence (proof before product)
+Current order leads with products and promo banners, then buries the proof. For an
+└── Materials           (component transparency — ties to "every claim verified")
+ABOUT
+├── About Us
+└── Contact
+PRODUCT DETAIL PAGE (PDP)  ← template, applies to every product
+├── Gallery
+├── Buy box (price / size / add-to-cart)
+├── Spec & Validation module   ← NEW, structural requirement (see §3)
+├── Size & Fit entry point
+└── Related products
+SIZE & FIT  ← NEW. Table-stakes for footwear.
+├── Size guide
+└── Fit finder / fit notes
+UTILITY / LEGAL (footer)
+├── FAQ
+├── Shipping & Returns
+├── Privacy Policy
+├── Terms of Service
+└── Newsletter / Waitlist signup
+ACCOUNT
+├── Account / Login
+├── Cart
+└── Checkout
+engineering-led brand, invert it: lead with the argument, end with the product and the
+ask.
+# Module Purpose Phase A (pre-
+launch) Phase B (live)
+1 Announcement
+bar One message only “First drop
+coming soon”
+Promo / shipping
+msg
+2 Hero Brand statement + single
+primary CTA
+CTA → Join
+waitlist CTA → Shop
+3 The ProblemWhy Leorix exists (the
+gap it fills) ✓ ✓
+4 The ApproachHow a Leorix shoe is
+engineered ✓ ✓
+5 Validation /
+Proof
+FDDI data, test results,
+measurable claims
+Teaser
+(“validated by
+FDDI”)
+Full proof + link
+to Technology
+6 Hero product
+feature
+ONE product — the hero
+(X)
+Preview /
+“coming soon”Shop the hero
+7 Collection
+preview
+Small curated set, not
+the full dump
+Hidden or
+“coming soon”✓
+8 Social proofTestimonials / partners
+(real, later) Optional ✓
+9 Conversion
+block The single ask Waitlist +
+counters
+Early-access /
+membership
+10Footer Utility, legal, signup ✓ ✓
+Principle: one hero, one primary CTA per page. Modules 3→4→5 are the argument; 6→7
+are the product; 8→9 are the ask. The visitor is convinced before being sold to.
+3. PDP structural requirement: the Spec & Validation module
+A default theme PDP has nowhere to render “here is the lab data behind this shoe.” That slot
+must be built, because it is where the transparency claim becomes real. Per-product,
+structured to hold:
+Component / material breakdown (the spec-sheet data, made public)
+Measured performance values (hardness, density, abrasion, plantar-load results)
+Validation reference (which FDDI report backs which claim)
+Construction method
+Size & fit entry point
+This module is the on-page proof for every “verified claim.” Build it as a reusable PDP
+section, populated per product, not a one-off.
+4. Define “The Vault”
+Currently a nav item with no established role. Pick one before content is written:
+Option A — Drops archive / limited releases: scarcity + collectibility layer.
+Option B — Members / early-access area: ties to the existing account system; natural
+home for the Phase A waitlist to graduate into.
+Option C — The engineering/proof destination: but Technology already does this
+better as a clear top-level page, so avoid overloading The Vault with it.
+Recommendation: B (early-access/membership) — it gives the waitlist somewhere to live
+post-launch and reinforces the direct relationship. Decide before build.
+5. Cleanup checklist (structural defects in current build)
+Remove duplicate “What Leorix Is Solving” section (renders twice — build error).
+Consolidate the two product-display modules (carousel + “Explore the Latest Product”)
+into one.
+Reduce three stacked “Shop Now” banners to one.
+Delete test/duplicate products (Sneaker 1–5 and their “Copy” variants) from the live
+catalog.
+Fix Men / Women routing to distinct collections.
+Resolve or remove dead footer links (Products, Newsletter, FAQ → currently #).
+Reset default theme metadata (“My Store” title, template attribution, 2020 copyright,
+placeholder contact block) — structural leftovers, not content.
+6. Build priority order
+1. Pick the mode (Phase A vs B) — gates everything.
+2. Re-sequence the homepage to proof-before-product (§2).
+3. Run the cleanup checklist (§5) — remove duplicates, test products, dead links, fix
+gender routing.
+4. Build the missing structural homes: Technology page (§1), PDP Spec & Validation
+module (§3), Size & Fit system (§1).
+5. Define and scope The Vault (§4).
+Content, imagery, and product designs slot in after this skeleton is correct.

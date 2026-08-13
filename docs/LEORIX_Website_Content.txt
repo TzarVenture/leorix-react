@@ -1,0 +1,233 @@
+LEORIX — Website Content
+Scope: copy for every section in the structure spec. Site is unpublished and being built in
+parallel to the FDDI engagement, so committed copy is used throughout. The only
+placeholders that remain are measured numbers that arrive after validation.
+Driving principle (the spine — everything passes through this)
+We say what we do, and we do what we say. No loose statements. No claim without
+proof.
+Operating rule that follows from it:
+What we DO — our design targets, our engineering method, and the FDDI engagement
+scope and its deliverables — is contracted and real. Say it now.
+What we EXPECT — anticipated results before the data exists — is pre-judging. Don’t
+say it.
+What we’ve MEASURED — quantified findings from validation — is the proof.
+Placeholder now, fill on confirmation.
+[NUMBER] = a measured value that drops in post-validation. Everything not marked
+[NUMBER] is committed and publishable.
+0. Voice & writing principles
+Write the way the shoe is engineered: precise, confident, unhurried. Trust is earned by
+being specific and by under-claiming relative to the proof.
+Specifics over superlatives. A number beats an adjective; a method beats a boast.
+Short, declarative sentences.
+No hype words: revolutionary, game-changing, ultimate, cutting-edge, world-class.
+Describe the method as fact; reserve numbers for after measurement.
+Indian-confident, globally legible. Engineered, here.
+1. Global elements
+Announcement bar
+Pre-launch: First drop coming soon — join the list for early access.
+Live: Free shipping across India. [or active promo]
+Primary nav: Shop · Technology · About Shop dropdown: Men · Women · The Vault
+Footer
+Tagline: We say what we do, and we do what we say.
+Columns: Shop · Technology · About · Help
+Help: Size & Fit · Shipping & Returns · FAQ · Contact
+Legal: Privacy Policy · Terms of Service
+Newsletter: Get the first drop, and the engineering behind it. [email] → Join
+© [current year] KUNJ Business Solutions LLP. LEORIX is a registered brand of
+KUNJ Business Solutions LLP.
+2. Homepage — section by section
+Module 1 — Hero
+Headline — recommended:
+A. Designed to look right. Engineered to prove it. ← recommended; claims a
+method, not a result
+B. We design it to look right, then engineer it to prove it.
+C. Looks designed. Built to be proven.
+Subline: LEORIX builds lifestyle footwear on engineering principles — stability,
+controlled cushioning, and all-day comfort — and validates it at FDDI before it
+reaches you.
+CTA:
+Pre-launch: Join the list →
+Live: Shop the drop →
+Module 2 — The Problem
+Eyebrow: THE GAP Headline: Casual shoes are styled. Performance shoes are over-
+built. Almost nothing is both. Body: Lifestyle footwear is usually designed to
+look good and engineered as an afterthought. Performance footwear is engineered
+for sport, then loaded with tech you don't need for a full day on your feet.
+LEORIX sits in the gap: the comfort and stability of a properly engineered shoe,
+in something you'd actually wear every day — and the testing to back every word of
+that sentence.
+Module 3 — The Approach
+Eyebrow: HOW WE BUILD Headline: Design-led. Engineering-backed. Measured, not
+assumed. Body: Every LEORIX shoe starts as a design and is then engineered
+against defined targets: rearfoot stability, controlled midfoot torsion, even
+plantar load distribution, and long-duration wear comfort. We set those targets,
+build to them, document them component by component, and validate them. Three
+pillars:
+1. Defined targets — Measurable performance goals are set before a material is
+chosen.
+2. Built to spec — Construction and materials are selected to hit those targets,
+documented part by part.
+3. Independently validated — Prototypes are tested at the Footwear Design &
+Development Institute (FDDI).
+Module 4 — Validation / Proof
+Eyebrow: THE PROOF Headline: Validated at FDDI — by design, not by adjective.
+Body: In partnership with the Footwear Design & Development Institute, LEORIX
+runs two streams of evaluation: mechanical durability — structural integrity and
+failure-mode analysis — and human biomechanical testing — plantar pressure
+distribution, joint loading, and functional performance across prototype
+iterations. This is the engagement, in writing, not a marketing line. Headline
+results (post-validation):
+Plantar pressure distribution: [NUMBER]
+Durability / structural performance: [NUMBER]
+Each figure traces to its FDDI report. CTA: See the engineering → (Technology
+page)
+Module 5 — Hero product feature (Article X)
+Eyebrow: THE HERO Headline: [product name — "X" or its commercial name] Body:
+Our lead silhouette: an engineered breathable upper on a stability-tuned bottom
+unit, built for all-day wear and engineered to be validated. [One-line
+construction summary once design is final — resolve construction method first.]
+Pre-launch CTA: Preview the X →
+Live CTA: Shop the X → (Spec numbers live on the PDP, not here.)
+Module 6 — Collection preview
+Headline: The first range. Body: Five men's and five women's variants, built on
+one validated platform.
+Pre-launch: “coming soon” tiles, no prices.
+Live: tiles linking to PDPs.
+Module 7 — Social proof
+Eyebrow: THE BACKING
+Pre-launch: a credibility strip naming the FDDI collaboration (institution, not
+testimonials) — per the contract’s acknowledgement clause; confirm the agreed format.
+Live: real customer quotes only. Do not fabricate; omit the module until genuine reviews
+exist.
+Module 8 — Conversion block
+Pre-launch (waitlist):
+Headline: Be first — and see the proof first.
+Body: Join the list for early access to the first drop, founder pricing,
+and the validation data as it's published.
+CTA: Join the list →
+Counters: [NUMBER: real waitlist / country figures only.]
+Live: repurpose into The Vault early-access for future drops.
+3. Technology page
+Page intro Headline: The engineering behind every pair. Body: We say what we do,
+and we do what we say. Here is what we do — and what we're building the proof of.
+3a. The Approach
+Headline: Targets first. Body: Before design, we define what the shoe must do:
+measurable targets for rearfoot stability, midfoot torsion control, plantar load
+distribution, and comfort across a 6–8 hour day. Every later decision is judged
+against these.
+3b. The Engagement — what we’re building and validating
+Headline: Engineered and tested at FDDI. Body: LEORIX is developed in a
+structured engagement with the Footwear Design & Development Institute, across
+design, prototyping, and validation. The engagement is contracted to produce:
+A validated footwear platform — five men's and five women's variants on one
+engineered system.
+Full engineering documentation — 3D CAD models, 2D manufacturing drawings, and
+material specifications tied to mechanical and functional requirements.
+Functional prototypes fabricated across size ranges for laboratory and human
+testing.
+A durability and mechanical performance assessment — structural integrity and
+failure-mode analysis.
+A human biomechanical evaluation — plantar pressure distribution, joint
+loading, and functional performance across iterations.
+Technical documentation supporting our intellectual property filings. Note:
+every item above is contracted scope — sayable today. Outcomes are described as what
+the testing measures, never as a result we assume.
+3c. Validation results
+Headline: The findings. Body: As each evaluation is confirmed, we publish the
+result and the report it comes from.
+Plantar pressure distribution — [NUMBER], [FDDI report ref]
+Joint loading / functional performance — [NUMBER], [FDDI report ref]
+Durability / structural integrity — [NUMBER], [FDDI report ref] (Publish only
+after the figure is confirmed and, where relevant, after IP filing per the contract.)
+3d. Materials
+Headline: Every component, on the record. Body: We publish what each part of the
+shoe is made of and what it's specified to do — because "transparent" should mean
+you can read the spec, not just hear the word. Component table: [populate from
+the finalized material requirement sheet — material, committed spec/value,
+function. List committed specs only, not items still "under evaluation." Spec
+values that depend on testing carry a [NUMBER] until confirmed.] (Sustainability copy
+intentionally omitted — no claim without proof.)
+4. About
+Headline: An Indian footwear brand, built on engineering. Body: LEORIX is a
+performance-oriented lifestyle footwear brand by KUNJ Business Solutions LLP,
+Jaipur. We started from a frustration: lifestyle shoes are sold on looks and
+adjectives, while the things that actually make a shoe good to wear — stability,
+cushioning that's controlled rather than just soft, comfort that lasts a full day
+— are rarely specified and almost never proven. So we work the other way around.
+We set measurable targets, engineer to them, and validate the result with the
+Footwear Design & Development Institute. Design leads. Engineering proves. We say
+what we do, and we do what we say. [Optional founder line / origin detail — only
+if accurate.]
+Contact
+Partnerships, press, product questions: [real email — replace placeholder
+contact@domain.com]
+[Real business address — replace the placeholder Bali address with the Jaipur
+LLP or a customer-facing address.]
+5. Product Detail Page (PDP) — copy template
+Title: [product name] Short descriptor: [one line: who it's for + the single biggest
+engineered benefit] Buy box microcopy:
+Size label: Select size · Not sure? Size & Fit guide →
+CTA: Add to cart / Pre-launch: Notify me
+Spec & Validation module (the differentiator):
+Title: The spec, in full.
+Intro: Everything this shoe is made of, and what each part is built to do.
+Component breakdown: [per-component material + committed spec + function,
+from the material sheet]
+Performance values: [hardness, density, abrasion, plantar-load — committed
+values now; tested values as [NUMBER] until confirmed]
+Validation reference: [which FDDI report backs which value]
+Construction: [final construction method — resolve the vulcanized-vs-stability-
+goal question first]
+Product story (optional): brief design-led paragraph, written per product once designs are
+final.
+6. Size & Fit
+Headline: Get the fit right the first time. Body: LEORIX is built on one
+validated last. Here's how it runs and how to size.
+Size guide: [real measurement chart — UK/EU/US/cm, by gender]
+Fit notes: [runs true / size up guidance, once confirmed from sampling]
+Measuring at home: stand on paper, mark heel to longest toe, measure in cm,
+match to the chart.
+7. The Vault (recommended role: early access / membership)
+Headline: The Vault. Body: Early access to drops, founder pricing, and the
+validation data before it's public. The list becomes the inside track.
+Pre-launch: doubles as the waitlist destination.
+CTA: Get access →
+8. Utility / Help
+FAQ — starter questions (answers once facts confirmed):
+What does "validated" actually mean? → FDDI testing scope; link Technology.
+When is the first drop? → [date, or "join the list to be notified."]
+How does sizing run? → link Size & Fit.
+What is the shoe made of? → link PDP spec / Materials.
+Shipping, returns, exchanges? → link policy.
+[Warranty / returns specifics.]
+Shipping & Returns: [real policy — windows, India coverage, return conditions,
+once confirmed.]
+Claim-Status Legend
+Content Publishable nowPlaceholder until
+Driving principle, brand narrative,
+voice
+ —
+Design targets (stability, torsion,
+load, comfort)
+  — what we do—
+FDDI engagement scope &
+contracted deliverables
+  — contracted—
+What each test measures
+  — method,
+not result —
+Specific test results / performance
+numbers — FDDI report confirms the
+figure
+Material spec values that depend on— confirmation
+testing
+Customer testimonials — real post-launch reviews
+(never fabricate)
+Partner logos / FDDI naming — permission / agreed format
+Counters, prices, drop date, shipping
+policy — confirmed business decisions
+Sustainability claims
+  omitted only if/when backed by
+material direction
+Rule of thumb: if it’s what we do — a target, a method, a contracted deliverable — say it
+now. If it’s a result or a number, it waits for proof.

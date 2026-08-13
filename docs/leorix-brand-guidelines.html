@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEORIX — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#2E3E31;      /* Primary — ground */
+    --tan:#CEB08A;        /* Secondary — signature */
+    --cream:#F4EFE6;      /* Paper — surface */
+    --ink:#1A211C;        /* Ink — text on cream */
+    --stone:#9C9080;      /* Muted — captions, rules */
+    --tan-soft:rgba(206,176,138,.28);
+    --tan-line:rgba(206,176,138,.55);
+    --measure:66ch;
+    --edge:clamp(1.4rem,5vw,5rem);
+    --maxw:1060px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Archivo",system-ui,sans-serif;
+    font-weight:400;line-height:1.62;font-size:clamp(15px,1.5vw,16.5px);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--tan);color:var(--green);}
+
+  /* ---- shared layout ---- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--edge);}
+  section{padding:clamp(3.6rem,8vw,7rem) 0;}
+  .eyebrow{
+    display:flex;align-items:baseline;gap:1rem;
+    border-top:1px solid var(--tan-line);padding-top:.85rem;margin-bottom:2.4rem;
+  }
+  .eyebrow .idx{
+    font-family:"Archivo";font-weight:800;font-size:.72rem;letter-spacing:.22em;
+    color:var(--tan);font-feature-settings:"tnum";
+  }
+  .eyebrow .lbl{
+    font-family:"Archivo";font-weight:600;font-size:.72rem;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--stone);
+  }
+  h2.title{
+    font-family:"Fraunces","Georgia",serif;font-optical-sizing:auto;
+    font-weight:400;font-size:clamp(2.1rem,5.2vw,3.5rem);line-height:1.02;
+    letter-spacing:-.015em;margin:0 0 1.4rem;color:var(--green);
+  }
+  h2.title em{font-style:italic;font-weight:500;color:var(--ink);}
+  .lede{font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.55;max-width:44ch;color:var(--ink);}
+  p{max-width:var(--measure);}
+  h3{
+    font-family:"Archivo";font-weight:700;font-size:.82rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--stone);margin:0 0 .9rem;
+  }
+  a{color:inherit;}
+
+  /* ---- cover ---- */
+  .cover{
+    background:var(--green);color:var(--cream);min-height:100svh;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:clamp(1.8rem,5vw,3.2rem) var(--edge);
+  }
+  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;
+    font-family:"Archivo";font-weight:600;font-size:.7rem;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--tan);}
+  .cover-mid{align-self:center;text-align:center;width:100%;}
+  .mark{
+    font-family:"Archivo";font-weight:900;color:var(--tan);
+    font-size:clamp(3.4rem,17vw,10.5rem);letter-spacing:-.02em;line-height:1;
+    text-transform:uppercase;margin:0;
+  }
+  .cover-sub{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+    font-size:clamp(1.05rem,3.2vw,1.7rem);color:var(--cream);opacity:.85;
+    margin-top:1.1rem;letter-spacing:.01em;
+  }
+  .cover-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+    font-family:"Archivo";font-weight:500;font-size:.7rem;letter-spacing:.18em;
+    text-transform:uppercase;color:rgba(244,239,230,.55);}
+  .cover-bot .r{text-align:right;}
+
+  /* ---- contents ---- */
+  .contents{background:var(--cream);}
+  .toc{list-style:none;padding:0;margin:1.4rem 0 0;border-top:1px solid var(--tan-line);}
+  .toc li a{
+    display:flex;align-items:baseline;gap:1.2rem;padding:1.05rem 0;
+    border-bottom:1px solid var(--tan-soft);text-decoration:none;
+    transition:color .18s ease,padding-left .18s ease;
+  }
+  .toc li a:hover{color:var(--green);padding-left:.5rem;}
+  .toc .n{font-family:"Archivo";font-weight:800;font-size:.75rem;letter-spacing:.14em;color:var(--tan);min-width:2.2rem;}
+  .toc .t{font-family:"Fraunces",serif;font-size:clamp(1.15rem,3vw,1.6rem);font-weight:400;color:var(--ink);}
+  .toc .d{margin-left:auto;font-size:.82rem;color:var(--stone);max-width:34ch;text-align:right;line-height:1.35;}
+
+  /* ---- foundation ---- */
+  .band{background:var(--green);color:var(--cream);}
+  .band .eyebrow{border-color:rgba(206,176,138,.35);}
+  .band .eyebrow .lbl{color:rgba(244,239,230,.6);}
+  .band h2.title{color:var(--tan);}
+  .band h2.title em{color:var(--cream);}
+  .band p{color:rgba(244,239,230,.9);}
+  .band h3{color:rgba(206,176,138,.85);}
+  .statement{
+    font-family:"Fraunces",serif;font-weight:300;
+    font-size:clamp(1.5rem,4.4vw,2.8rem);line-height:1.22;letter-spacing:-.01em;
+    max-width:20ch;color:var(--cream);margin:0;
+  }
+  .statement b{font-weight:500;font-style:italic;color:var(--tan);}
+  .pillars{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+    gap:1px;background:rgba(206,176,138,.3);border:1px solid rgba(206,176,138,.3);
+    margin-top:2.8rem;
+  }
+  .pillar{background:var(--green);padding:1.7rem 1.5rem;}
+  .pillar .pn{font-family:"Archivo";font-weight:800;font-size:.72rem;letter-spacing:.2em;color:var(--tan);}
+  .pillar .ph{font-family:"Fraunces",serif;font-size:1.35rem;font-weight:400;color:var(--cream);margin:.7rem 0 .5rem;line-height:1.1;}
+  .pillar p{font-size:.9rem;color:rgba(244,239,230,.78);margin:0;max-width:none;}
+
+  /* ---- logo ---- */
+  .specimen{
+    background:var(--green);border-radius:2px;
+    display:flex;align-items:center;justify-content:center;
+    padding:clamp(2.4rem,7vw,4.5rem);margin:.4rem 0 .6rem;position:relative;overflow:hidden;
+  }
+  .specimen .mk{font-family:"Archivo";font-weight:900;color:var(--tan);font-size:clamp(2.4rem,9vw,5rem);letter-spacing:-.02em;text-transform:uppercase;}
+  .clearspace{position:relative;padding:0;background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(206,176,138,.14) 9px,rgba(206,176,138,.14) 10px);}
+  .clearspace .inner{margin:clamp(1.6rem,4.5vw,3rem);background:var(--green);display:flex;align-items:center;justify-content:center;padding:clamp(1.8rem,5vw,3rem);position:relative;}
+  .clearspace .mk{position:relative;}
+  .clearspace .mk::before,.clearspace .mk::after{content:"";position:absolute;top:-.5em;bottom:-.5em;width:1px;background:var(--tan-line);}
+  .clearspace .mk::before{left:-.5em;}
+  .clearspace .mk::after{right:-.5em;}
+  .cap{font-size:.8rem;color:var(--stone);margin:.2rem 0 0;}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;margin-top:1.4rem;}
+  .lockup{border:1px solid var(--tan-line);border-radius:2px;overflow:hidden;}
+  .lockup .box{aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;font-family:"Archivo";font-weight:900;font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.02em;text-transform:uppercase;}
+  .lockup .lc{padding:.7rem .9rem;font-size:.76rem;color:var(--stone);border-top:1px solid var(--tan-soft);}
+  .b-green{background:var(--green);color:var(--tan);}
+  .b-tan{background:var(--tan);color:var(--green);}
+  .b-cream{background:var(--cream);color:var(--green);box-shadow:inset 0 0 0 1px var(--tan-soft);}
+  .b-ink{background:var(--ink);color:var(--cream);}
+
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.6rem;}
+  .rulecol h3{margin-bottom:1rem;}
+  .rulelist{list-style:none;padding:0;margin:0;}
+  .rulelist li{position:relative;padding:.55rem 0 .55rem 1.6rem;font-size:.92rem;border-bottom:1px solid var(--tan-soft);max-width:42ch;}
+  .rulelist li::before{position:absolute;left:0;top:.5rem;font-family:"Archivo";font-weight:800;font-size:.82rem;}
+  .do li::before{content:"+";color:var(--green);}
+  .dont li::before{content:"×";color:#A6553E;}
+
+  /* ---- color ---- */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem;margin-top:1.2rem;}
+  .swatch{border-radius:2px;overflow:hidden;border:1px solid var(--tan-soft);}
+  .swatch .chip{height:118px;}
+  .swatch .meta{padding:.75rem .85rem 1rem;}
+  .swatch .nm{font-family:"Archivo";font-weight:700;font-size:.9rem;}
+  .swatch .role{font-size:.74rem;color:var(--stone);margin:.1rem 0 .55rem;}
+  .swatch .hex{font-family:"Archivo";font-weight:500;font-size:.78rem;letter-spacing:.04em;}
+  .swatch .hex span{color:var(--stone);display:block;font-size:.72rem;margin-top:.15rem;letter-spacing:.02em;}
+  .ratio{display:flex;height:46px;border-radius:2px;overflow:hidden;margin-top:2.4rem;border:1px solid var(--tan-soft);}
+  .ratio i{display:flex;align-items:center;padding:0 .9rem;font-size:.72rem;font-weight:600;letter-spacing:.06em;}
+  .ratio .g{flex:60;background:var(--green);color:var(--tan);}
+  .ratio .c{flex:30;background:var(--cream);color:var(--green);}
+  .ratio .t{flex:10;background:var(--tan);color:var(--green);}
+
+  /* ---- type ---- */
+  .typerow{border-top:1px solid var(--tan-line);padding:1.8rem 0;display:grid;grid-template-columns:minmax(120px,1fr) 2.4fr;gap:1.6rem;align-items:start;}
+  .typerow .who h3{margin-bottom:.4rem;}
+  .typerow .who p{font-size:.85rem;color:var(--stone);margin:0;max-width:30ch;}
+  .fr-spec{font-family:"Fraunces",serif;font-weight:400;line-height:1;color:var(--green);}
+  .ar-spec{font-family:"Archivo";color:var(--green);}
+  .big{font-size:clamp(2.6rem,8vw,4.6rem);letter-spacing:-.015em;}
+  .glyphs{font-size:1.05rem;color:var(--stone);margin-top:.9rem;letter-spacing:.02em;word-spacing:.1em;}
+  .weights{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1rem;font-size:1.35rem;}
+  .weights span{color:var(--green);}
+  .scale-tbl{width:100%;border-collapse:collapse;margin-top:1.2rem;font-size:.88rem;}
+  .scale-tbl td,.scale-tbl th{text-align:left;padding:.6rem .4rem;border-bottom:1px solid var(--tan-soft);vertical-align:baseline;}
+  .scale-tbl th{font-family:"Archivo";font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);}
+  .scale-tbl .role{font-family:"Archivo";font-weight:600;}
+  .scale-tbl .fam{color:var(--stone);}
+
+  /* ---- voice ---- */
+  .attrs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.4rem;margin-top:1.2rem;}
+  .attr{border-left:2px solid var(--tan);padding:.2rem 0 .2rem 1.1rem;}
+  .attr .an{font-family:"Fraunces",serif;font-size:1.4rem;color:var(--green);}
+  .attr .aq{font-size:.85rem;color:var(--stone);font-style:italic;margin:.15rem 0 .45rem;}
+  .attr p{font-size:.88rem;margin:0;}
+  .voicecards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.6rem;}
+  .vcard{border:1px solid var(--tan-line);border-radius:2px;padding:1.3rem 1.4rem;}
+  .vcard .vh{font-family:"Archivo";font-weight:800;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+  .vcard.say .vh{color:var(--green);}
+  .vcard.avoid .vh{color:#A6553E;}
+  .vcard p{font-family:"Fraunces",serif;font-size:1.08rem;line-height:1.4;margin:0 0 .95rem;max-width:none;color:var(--ink);}
+  .vcard p:last-child{margin-bottom:0;}
+  .vcard.avoid p{color:var(--stone);}
+  .glossary{margin-top:2.6rem;border-top:1px solid var(--tan-line);}
+  .grow{display:grid;grid-template-columns:minmax(120px,1fr) 3fr;gap:1.4rem;padding:.95rem 0;border-bottom:1px solid var(--tan-soft);}
+  .grow .term{font-family:"Archivo";font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);}
+  .grow .def{font-size:.9rem;color:var(--ink);margin:0;}
+
+  /* ---- application ---- */
+  .apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;margin-top:1.4rem;}
+  .app{}
+  .app h3{color:var(--stone);}
+  .app p{font-size:.92rem;margin:0;}
+
+  /* ---- close ---- */
+  .close{background:var(--green);color:var(--cream);text-align:center;padding:clamp(4rem,10vw,7rem) var(--edge);}
+  .close .cm{font-family:"Archivo";font-weight:900;color:var(--tan);font-size:clamp(1.8rem,7vw,3.4rem);letter-spacing:-.02em;text-transform:uppercase;}
+  .close .cs{font-family:"Fraunces",serif;font-style:italic;color:rgba(244,239,230,.8);margin-top:.7rem;font-size:clamp(1rem,3vw,1.4rem);}
+  footer{background:var(--ink);color:rgba(244,239,230,.5);text-align:center;padding:1.5rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-family:"Archivo";}
+
+  @media (max-width:640px){
+    .rules,.typerow,.voicecards,.grow{grid-template-columns:1fr;}
+    .toc .d{display:none;}
+    .typerow{gap:.6rem;}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none;}}
+  @media print{
+    .cover{min-height:auto;}
+    section,.close{padding:2.2rem 0;}
+    body{font-size:11pt;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<header class="cover">
+  <div class="cover-top">
+    <span>Brand Guidelines</span>
+    <span>Consumer Identity</span>
+  </div>
+  <div class="cover-mid">
+    <h1 class="mark">Leorix</h1>
+    <p class="cover-sub">Grounded by design.</p>
+  </div>
+  <div class="cover-bot">
+    <span>Edition 01</span>
+    <span class="r">Footwear · Engineered from the sole up</span>
+  </div>
+</header>
+
+<!-- ===== CONTENTS ===== -->
+<section class="contents">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">00</span><span class="lbl">Contents</span></div>
+    <h2 class="title">What's <em>inside</em></h2>
+    <ul class="toc">
+      <li><a href="#foundation"><span class="n">01</span><span class="t">Foundation</span><span class="d">Who LEORIX is, and the promise underneath every shoe</span></a></li>
+      <li><a href="#wordmark"><span class="n">02</span><span class="t">The Wordmark</span><span class="d">Clear space, sizing, color pairings, and misuse</span></a></li>
+      <li><a href="#color"><span class="n">03</span><span class="t">Color</span><span class="d">The palette, its roles, and how much of each to use</span></a></li>
+      <li><a href="#type"><span class="n">04</span><span class="t">Typography</span><span class="d">Fraunces and Archivo — voices in type</span></a></li>
+      <li><a href="#voice"><span class="n">05</span><span class="t">Voice &amp; Tone</span><span class="d">How LEORIX speaks to the people who wear it</span></a></li>
+      <li><a href="#world"><span class="n">06</span><span class="t">In the World</span><span class="d">Applying the identity across touchpoints</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== FOUNDATION ===== -->
+<section class="band" id="foundation">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">01</span><span class="lbl">Foundation</span></div>
+    <h2 class="title">Engineered from the <em>sole up</em></h2>
+    <p class="lede">LEORIX makes footwear for people who are on their feet and expect the ground to be handled. We build sole-first — stability, traction, and all-day comfort designed into the part that meets the world, not added on top of it.</p>
+
+    <div style="margin-top:3rem;">
+      <h3>Brand statement</h3>
+      <p class="statement">A shoe should read the ground and <b>hold it</b> — so you never have to think about your footing again.</p>
+    </div>
+
+    <div style="margin-top:3rem;max-width:var(--measure);">
+      <h3>Positioning</h3>
+      <p>For anyone who moves through long days on hard surfaces, LEORIX is the footwear engineered where it matters most — at the point of contact. Where other brands decorate the upper and hope the sole keeps up, we start at the ground and design outward. The result is quiet confidence you feel in the first step and still feel in the last.</p>
+    </div>
+
+    <h3 style="margin-top:3rem;">The four pillars</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="pn">01</div><div class="ph">Sure-footed</div><p>Stability and grip you notice before anything else. Confidence starts at the ground.</p></div>
+      <div class="pillar"><div class="pn">02</div><div class="ph">All-day true</div><p>Comfort built for hour twelve, not just the fitting room. Support that doesn't fade.</p></div>
+      <div class="pillar"><div class="pn">03</div><div class="ph">Engineered, not decorated</div><p>Every line earns its place. Form follows the way a foot actually moves.</p></div>
+      <div class="pillar"><div class="pn">04</div><div class="ph">Quietly confident</div><p>Understated by choice. The shoe does the talking; the branding stays low.</p></div>
+    </div>
+
+    <div style="margin-top:3rem;max-width:var(--measure);">
+      <h3>On the name</h3>
+      <p>LEORIX carries the lion in it — grounded power, precision, mastery of terrain. Treat it as a source of meaning, never a mascot. It shapes how the brand feels: steady, capable, unhurried. It should almost never appear as a literal lion. The strength is in the stance, not the picture.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORDMARK ===== -->
+<section id="wordmark">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">02</span><span class="lbl">The Wordmark</span></div>
+    <h2 class="title">One word, <em>set with weight</em></h2>
+    <p class="lede">The wordmark is LEORIX in Archivo Black, all caps, tightly tracked. It is the primary identifier — stable, planted, and unmistakable. No icon is required; the type is the mark.</p>
+
+    <div class="specimen" style="margin-top:2.4rem;"><span class="mk">Leorix</span></div>
+    <p class="cap">Primary wordmark — Warm Tan on Forest Green.</p>
+
+    <h3 style="margin-top:3rem;">Clear space &amp; minimum size</h3>
+    <div class="clearspace specimen" style="padding:0;background:var(--cream);">
+      <div class="inner"><span class="mk">Leorix</span></div>
+    </div>
+    <p class="cap">Keep clear space around the mark equal to the cap-height of the “L” on all sides. Never let other elements enter this zone. Minimum width: 90px on screen, 22mm in print.</p>
+
+    <h3 style="margin-top:3rem;">Approved color pairings</h3>
+    <div class="grid2">
+      <div class="lockup"><div class="box b-green">Leorix</div><div class="lc">Tan on Green — primary</div></div>
+      <div class="lockup"><div class="box b-tan">Leorix</div><div class="lc">Green on Tan — secondary</div></div>
+      <div class="lockup"><div class="box b-cream">Leorix</div><div class="lc">Green on Cream — light surfaces</div></div>
+      <div class="lockup"><div class="box b-ink">Leorix</div><div class="lc">Cream on Ink — high contrast</div></div>
+    </div>
+
+    <div class="rules">
+      <div class="rulecol">
+        <h3>Do</h3>
+        <ul class="rulelist do">
+          <li>Keep the mark all-caps and tightly tracked as drawn.</li>
+          <li>Use approved color pairs only, at full contrast.</li>
+          <li>Give it room — respect the clear space on every side.</li>
+          <li>Let it sit planted and level, like a foot on the ground.</li>
+        </ul>
+      </div>
+      <div class="rulecol">
+        <h3>Don't</h3>
+        <ul class="rulelist dont">
+          <li>Stretch, condense, outline, or add effects to the letters.</li>
+          <li>Re-set it in another typeface or mixed case.</li>
+          <li>Tilt, arch, or rotate the wordmark.</li>
+          <li>Place it on busy imagery or low-contrast color.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLOR ===== -->
+<section class="band" id="color">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">03</span><span class="lbl">Color</span></div>
+    <h2 class="title">Green is the <em>ground</em></h2>
+    <p class="lede">Forest Green is where everything stands. Warm Tan is the signature — used sparingly, it carries the mark and the moments that matter. Cream gives the brand air; Ink and Stone do the quiet structural work.</p>
+
+    <div class="swatches" style="margin-top:2.4rem;">
+      <div class="swatch"><div class="chip" style="background:#2E3E31;"></div><div class="meta"><div class="nm">Forest Green</div><div class="role">Primary · ground</div><div class="hex">#2E3E31<span>R46 G62 B49</span></div></div></div>
+      <div class="swatch"><div class="chip" style="background:#CEB08A;"></div><div class="meta"><div class="nm">Warm Tan</div><div class="role">Secondary · signature</div><div class="hex">#CEB08A<span>R206 G176 B138</span></div></div></div>
+      <div class="swatch"><div class="chip" style="background:#F4EFE6;"></div><div class="meta"><div class="nm">Cream</div><div class="role">Paper · surface</div><div class="hex">#F4EFE6<span>R244 G239 B230</span></div></div></div>
+      <div class="swatch"><div class="chip" style="background:#1A211C;"></div><div class="meta"><div class="nm">Ink</div><div class="role">Text · contrast</div><div class="hex">#1A211C<span>R26 G33 B28</span></div></div></div>
+      <div class="swatch"><div class="chip" style="background:#9C9080;"></div><div class="meta"><div class="nm">Stone</div><div class="role">Muted · captions, rules</div><div class="hex">#9C9080<span>R156 G144 B128</span></div></div></div>
+    </div>
+
+    <h3 style="margin-top:3rem;">Balance — roughly 60 / 30 / 10</h3>
+    <div class="ratio">
+      <i class="g">Green 60</i><i class="c">Cream 30</i><i class="t">Tan 10</i>
+    </div>
+    <p class="cap" style="color:rgba(244,239,230,.65);">Green leads and grounds. Cream opens up space. Tan is the accent — the more restraint, the more it reads as the mark. Ink and Stone sit outside the ratio as functional text colors.</p>
+  </div>
+</section>
+
+<!-- ===== TYPOGRAPHY ===== -->
+<section id="type">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">04</span><span class="lbl">Typography</span></div>
+    <h2 class="title">Two voices, <em>one register</em></h2>
+    <p class="lede">Fraunces carries the human, editorial voice — the warmth. Archivo carries the engineered voice — the structure. Together they hold the balance between craft and precision the brand is built on.</p>
+
+    <div class="typerow">
+      <div class="who"><h3>Fraunces</h3><p>Display &amp; editorial. Headlines, statements, pull quotes. Used with restraint.</p></div>
+      <div>
+        <div class="fr-spec big">Sure-footed</div>
+        <div class="weights"><span class="fr-spec">Light</span><span class="fr-spec" style="font-weight:400;">Regular</span><span class="fr-spec" style="font-weight:500;font-style:italic;">Italic</span><span class="fr-spec" style="font-weight:600;">Semibold</span></div>
+        <div class="glyphs fr-spec">Aa Bb Gg Rr Xx · 0123456789 · &amp; ? —</div>
+      </div>
+    </div>
+
+    <div class="typerow">
+      <div class="who"><h3>Archivo</h3><p>Body, UI, labels &amp; the wordmark. Clear at every size. The workhorse.</p></div>
+      <div>
+        <div class="ar-spec big" style="font-weight:800;">All-day true</div>
+        <div class="weights"><span class="ar-spec" style="font-weight:400;">Regular</span><span class="ar-spec" style="font-weight:600;">Semibold</span><span class="ar-spec" style="font-weight:800;">Extrabold</span><span class="ar-spec" style="font-weight:900;">Black</span></div>
+        <div class="glyphs ar-spec">Aa Bb Gg Rr Xx · 0123456789 · &amp; ? —</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.8rem;">Type scale &amp; roles</h3>
+    <table class="scale-tbl">
+      <thead><tr><th>Role</th><th>Typeface</th><th>Weight / Case</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="role">Wordmark</td><td class="fam">Archivo</td><td>Black · UPPER</td><td>Tight tracking, as drawn</td></tr>
+        <tr><td class="role">Display / H1–H2</td><td class="fam">Fraunces</td><td>Light–Regular · Sentence</td><td>Occasional italic for emphasis</td></tr>
+        <tr><td class="role">Eyebrow / Label</td><td class="fam">Archivo</td><td>Semibold–Extrabold · UPPER</td><td>Wide tracking (.18–.28em)</td></tr>
+        <tr><td class="role">Body</td><td class="fam">Archivo</td><td>Regular · Sentence</td><td>Line-height ~1.6</td></tr>
+        <tr><td class="role">Caption / Data</td><td class="fam">Archivo</td><td>Medium · Sentence</td><td>Stone color, small</td></tr>
+      </tbody>
+    </table>
+    <p class="cap" style="margin-top:1.2rem;">Rule of thumb: Fraunces speaks, Archivo informs. If a line is doing a job — a button, a spec, a label — it's Archivo. If it's setting a feeling, it's Fraunces.</p>
+  </div>
+</section>
+
+<!-- ===== VOICE ===== -->
+<section class="band" id="voice">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">05</span><span class="lbl">Voice &amp; Tone</span></div>
+    <h2 class="title">Say less, <em>mean more</em></h2>
+    <p class="lede">LEORIX speaks the way it builds: grounded, precise, and quietly sure. We describe what a shoe does in plain terms, and we trust the wearer to feel the difference. No hype, no exclamation, no borrowed hustle.</p>
+
+    <div class="attrs">
+      <div class="attr"><div class="an">Grounded</div><div class="aq">plain over clever</div><p>Concrete language. Real benefits. We name what you'll feel, not what we hope you'll believe.</p></div>
+      <div class="attr"><div class="an">Precise</div><div class="aq">specific over sweeping</div><p>Numbers and details where they earn trust. We'd rather say one true thing than five vague ones.</p></div>
+      <div class="attr"><div class="an">Assured</div><div class="aq">declarative, unhurried</div><p>We state things. No hedging, no shouting. Confidence that doesn't need volume.</p></div>
+      <div class="attr"><div class="an">Warm</div><div class="aq">human, not clinical</div><p>Engineered doesn't mean cold. There's a person on the other side of every line.</p></div>
+    </div>
+
+    <div class="voicecards">
+      <div class="vcard say">
+        <div class="vh">✓ Sounds like us</div>
+        <p>“Built on a sole that reads the ground and holds it.”</p>
+        <p>“Still comfortable at hour twelve.”</p>
+        <p>“We start at the ground. Everything else follows.”</p>
+      </div>
+      <div class="vcard avoid">
+        <div class="vh">✕ Not us</div>
+        <p>“The most revolutionary sneaker you'll EVER wear!!!”</p>
+        <p>“Insanely comfy, game-changing, next-level cushion.”</p>
+        <p>“Unleash your inner lion. Dominate every step.”</p>
+      </div>
+    </div>
+
+    <div class="glossary">
+      <h3 style="padding-top:1.6rem;">A few house rules</h3>
+      <div class="grow"><div class="term">Sentence case</div><p class="def">Body and headlines in sentence case. Save all-caps for the wordmark, eyebrows, and labels.</p></div>
+      <div class="grow"><div class="term">No exclamation</div><p class="def">If a claim needs a “!”, it isn't strong enough yet. Rewrite until the fact carries it.</p></div>
+      <div class="grow"><div class="term">Ground language</div><p class="def">Lean on the brand's world — footing, contact, grip, standing, stride. Avoid tech jargon and buzzwords.</p></div>
+      <div class="grow"><div class="term">Lion, lightly</div><p class="def">The lion is a feeling, not a headline. Reference power and terrain by implication, never as a slogan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IN THE WORLD ===== -->
+<section id="world">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">06</span><span class="lbl">In the World</span></div>
+    <h2 class="title">The same brand, <em>everywhere</em></h2>
+    <p class="lede">Consistency is what makes a young brand feel established. Whatever the touchpoint, green grounds it, tan signs it, and the type keeps its two voices. When in doubt, choose the quieter option.</p>
+
+    <div class="apps">
+      <div class="app"><h3>Product pages</h3><p>Lead with the shoe on green. One Fraunces line to set the feeling, Archivo for the specs. Let the product breathe — generous space, few words.</p></div>
+      <div class="app"><h3>Packaging</h3><p>Green box, tan wordmark, cream tissue. The unboxing should feel considered and calm, never loud. Restraint is the premium signal.</p></div>
+      <div class="app"><h3>Social</h3><p>Grounded imagery — feet, terrain, contact. Captions short and declarative. Tan reserved for the mark and single accents, not full fills.</p></div>
+      <div class="app"><h3>Retail &amp; email</h3><p>Cream surfaces with green type for readability; green blocks for moments of emphasis. One accent per view. Consistent margins everywhere.</p></div>
+    </div>
+
+    <div style="margin-top:3rem;max-width:var(--measure);">
+      <h3>The one-line test</h3>
+      <p>Before anything ships, read it back against the brand: does it sound sure without shouting, and does it feel grounded? If yes, it's LEORIX. If it's reaching for hype or leaning on the lion, pull it back to the ground.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLOSE ===== -->
+<div class="close">
+  <div class="cm">Leorix</div>
+  <div class="cs">Grounded by design.</div>
+</div>
+<footer>LEORIX · Brand Guidelines · Edition 01 · Consumer Identity</footer>
+
+</body>
+</html>
