@@ -29,22 +29,22 @@ export const FAQPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-ink py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
-        <div className="border-b border-brand-tan-line pb-8 space-y-4">
-          <div className="eyebrow flex items-baseline gap-4">
-            <span className="eyebrow-idx font-mono">01</span>
-            <span className="eyebrow-lbl">FREQUENTLY ASKED QUESTIONS</span>
+    <div className="min-h-screen bg-brand-cream text-brand-ink py-8 sm:py-12 select-none">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
+        <div className="border-b border-brand-tan-line pb-6 sm:pb-8 space-y-3 sm:space-y-4">
+          <div className="eyebrow flex items-baseline gap-3 sm:gap-4">
+            <span className="eyebrow-idx font-mono text-xs sm:text-sm">01</span>
+            <span className="eyebrow-lbl text-xs sm:text-sm uppercase tracking-widest">FREQUENTLY ASKED QUESTIONS</span>
           </div>
-          <h1 className="font-serif-display text-4xl sm:text-6xl font-normal text-brand-green">
+          <h1 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-normal text-brand-green leading-tight">
             FAQ — Questions & Answers
           </h1>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {faqs.map((f, i) => (
-            <div key={i} className="bg-white p-6 rounded-3xl border border-brand-stone/30 space-y-2">
-              <h3 className="font-serif-display text-xl text-brand-green font-normal">
+            <div key={i} className="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-brand-stone/30 space-y-2 shadow-xs">
+              <h3 className="font-serif-display text-lg sm:text-xl text-brand-green font-normal">
                 {f.q}
               </h3>
               <p className="text-xs text-brand-ink/80 leading-relaxed font-sans">
@@ -62,29 +62,29 @@ export const ShippingReturnsPage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-ink py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
-        <div className="border-b border-brand-tan-line pb-8 space-y-4">
-          <div className="eyebrow flex items-baseline gap-4">
-            <span className="eyebrow-idx font-mono">02</span>
-            <span className="eyebrow-lbl">UTILITY POLICY</span>
+    <div className="min-h-screen bg-brand-cream text-brand-ink py-8 sm:py-12 select-none">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
+        <div className="border-b border-brand-tan-line pb-6 sm:pb-8 space-y-3 sm:space-y-4">
+          <div className="eyebrow flex items-baseline gap-3 sm:gap-4">
+            <span className="eyebrow-idx font-mono text-xs sm:text-sm">02</span>
+            <span className="eyebrow-lbl text-xs sm:text-sm uppercase tracking-widest">UTILITY POLICY</span>
           </div>
-          <h1 className="font-serif-display text-4xl sm:text-6xl font-normal text-brand-green">
+          <h1 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-normal text-brand-green leading-tight">
             Shipping & Returns
           </h1>
         </div>
 
-        <div className="bg-white p-8 rounded-3xl border border-brand-stone/30 space-y-6 text-xs leading-relaxed">
-          <div className="space-y-2">
-            <h3 className="font-serif-display text-lg text-brand-green">Domestic Shipping (India)</h3>
-            <p className="text-brand-stone">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-brand-stone/30 space-y-5 text-xs leading-relaxed shadow-xs">
+          <div className="space-y-1.5">
+            <h3 className="font-serif-display text-base sm:text-lg text-brand-green">Domestic Shipping (India)</h3>
+            <p className="text-brand-stone leading-relaxed">
               Complimentary express shipping is included on all orders across India. Orders are dispatched within 24-48 business hours from our Jaipur logistics node.
             </p>
           </div>
 
-          <div className="space-y-2">
-            <h3 className="font-serif-display text-lg text-brand-green">7-Day Size Exchange Policy</h3>
-            <p className="text-brand-stone">
+          <div className="space-y-1.5">
+            <h3 className="font-serif-display text-base sm:text-lg text-brand-green">7-Day Size Exchange Policy</h3>
+            <p className="text-brand-stone leading-relaxed">
               If the fit is not ideal, you may initiate a complimentary size exchange within 7 days of delivery. Items must remain un-worn in original packaging.
             </p>
           </div>
@@ -101,19 +101,19 @@ export const LegalPage = () => {
   useEffect(() => window.scrollTo(0, 0), [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-ink py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
-        <div className="border-b border-brand-tan-line pb-8 space-y-4">
-          <div className="eyebrow flex items-baseline gap-4">
-            <span className="eyebrow-idx font-mono">03</span>
-            <span className="eyebrow-lbl">LEGAL STATEMENT</span>
+    <div className="min-h-screen bg-brand-cream text-brand-ink py-8 sm:py-12 select-none">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
+        <div className="border-b border-brand-tan-line pb-6 sm:pb-8 space-y-3 sm:space-y-4">
+          <div className="eyebrow flex items-baseline gap-3 sm:gap-4">
+            <span className="eyebrow-idx font-mono text-xs sm:text-sm">03</span>
+            <span className="eyebrow-lbl text-xs sm:text-sm uppercase tracking-widest">LEGAL STATEMENT</span>
           </div>
-          <h1 className="font-serif-display text-4xl sm:text-6xl font-normal text-brand-green">
+          <h1 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-normal text-brand-green leading-tight">
             {isPrivacy ? 'Privacy Policy' : 'Terms of Service'}
           </h1>
         </div>
 
-        <div className="bg-white p-8 rounded-3xl border border-brand-stone/30 space-y-6 text-xs text-brand-stone leading-relaxed">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-brand-stone/30 space-y-4 text-xs text-brand-stone leading-relaxed shadow-xs">
           <p>
             <strong>LEORIX</strong> is a registered brand of <strong>KUNJ Business Solutions LLP</strong>, Jaipur, Rajasthan, India.
           </p>
