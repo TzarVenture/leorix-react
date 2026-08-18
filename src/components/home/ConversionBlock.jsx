@@ -19,13 +19,13 @@ const ConversionBlock = () => {
   const pioneerCount = 1420 + waitlistEmails.length;
 
   return (
-    <section id="waitlist" className="py-16 sm:py-24 bg-brand-cream text-brand-ink border-b border-brand-tan-soft">
+    <section id="waitlist" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Eyebrow */}
-        <div className="eyebrow flex items-baseline gap-4 border-t border-brand-tan-line pt-3 mb-8">
-          <span className="eyebrow-idx font-mono text-brand-green">08</span>
-          <span className="eyebrow-lbl text-brand-stone">PRIORITY ACCESS & CONVERSION</span>
+        {/* Eyebrow - Fixed numbering to 11 */}
+        <div className="eyebrow flex items-baseline gap-3 border-t border-brand-tan-line pt-1.5 mb-2 sm:mb-3">
+          <span className="eyebrow-idx font-mono text-brand-green text-[11px] sm:text-xs">11</span>
+          <span className="eyebrow-lbl text-brand-stone text-[10px] sm:text-xs uppercase tracking-widest">PRIORITY ACCESS & CONVERSION</span>
         </div>
 
         {/* Phase A Waitlist Block */}

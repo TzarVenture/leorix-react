@@ -36,3 +36,7 @@ dist-ssr/
 # Vite temporary build cache files
 vite.config.js.timestamp*
 .vite/
+
+# Raw heavy source images (WebP optimized images used in production)
+img/*.png
+

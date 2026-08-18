@@ -13,13 +13,13 @@ const scopeIcons = {
 
 const SocialProofStrip = () => {
   return (
-    <section id="social-proof" className="py-16 bg-brand-green text-brand-cream border-b border-brand-tan/20">
+    <section id="social-proof" className="py-4 sm:py-6 lg:py-8 bg-brand-green text-brand-cream border-b border-brand-tan/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Eyebrow */}
-        <div className="eyebrow flex items-baseline gap-4 border-t border-brand-tan/30 pt-3 mb-8">
-          <span className="eyebrow-idx font-mono text-brand-tan">07</span>
-          <span className="eyebrow-lbl text-brand-cream/60">THE BACKING</span>
+        {/* Eyebrow - Fixed numbering to 10 */}
+        <div className="eyebrow flex items-baseline gap-3 border-t border-brand-tan/30 pt-1.5 mb-2 sm:mb-3">
+          <span className="eyebrow-idx font-mono text-brand-tan text-[11px] sm:text-xs">10</span>
+          <span className="eyebrow-lbl text-brand-cream/60 text-[10px] sm:text-xs uppercase tracking-widest">THE BACKING</span>
         </div>
 
         {/* Institutional Credibility Header */}
