@@ -1,10 +1,10 @@
-// Import local high-resolution shoe renderings
-import shoeBlack from '../../img/leorix-shoe-black-side.png';
-import shoeGreen from '../../img/leorix-shoe-green-side.png';
-import shoeGreenWhite from '../../img/leorix-shoe-green-white-side.png';
-import shoeWhiteGreen from '../../img/leorix-shoe-white-green-side.png';
-import shoeWhite from '../../img/leorix-shoe-white-side.png';
-import shoeLayout from '../../img/shoe-layout-drawing.png';
+// Import local high-resolution shoe renderings (Optimized WebP)
+import shoeBlack from '../../img/leorix-shoe-black-side.webp';
+import shoeGreen from '../../img/leorix-shoe-green-side.webp';
+import shoeGreenWhite from '../../img/leorix-shoe-green-white-side.webp';
+import shoeWhiteGreen from '../../img/leorix-shoe-white-green-side.webp';
+import shoeWhite from '../../img/leorix-shoe-white-side.webp';
+import shoeLayout from '../../img/shoe-layout-drawing.webp';
 
 export const HERO_PRODUCT = {
   id: 'leorix-article-x',

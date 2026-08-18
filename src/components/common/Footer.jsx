@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useStore } from '../../context/StoreContext';
 import { ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ onOpenHelp }) => {
   const { joinWaitlist, hasJoinedWaitlist } = useStore();
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -146,9 +146,19 @@ const Footer = () => {
           {/* Column 4: Help & Utility */}
           <div className="space-y-3">
             <h4 className="font-sans font-bold uppercase text-[11px] tracking-widest text-brand-tan">
-              Help
+              Help & Support
             </h4>
             <ul className="space-y-2">
+              {onOpenHelp && (
+                <li>
+                  <button
+                    onClick={onOpenHelp}
+                    className="hover:text-brand-tan text-left transition-colors font-bold text-brand-cream cursor-pointer flex items-center gap-1.5"
+                  >
+                    <span>File Complaint / Inquiry</span>
+                  </button>
+                </li>
+              )}
               <li>
                 <Link to="/size-fit" className="hover:text-brand-tan transition-colors">
                   Size & Fit Guide

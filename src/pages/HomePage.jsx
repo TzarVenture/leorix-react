@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
-import HeroScrubSection from '../components/home/HeroScrubSection';
+// import HeroScrubSection from '../components/home/HeroScrubSection';
+import NewHeroSection from '../components/home/NewHeroSection';
 import MarqueeTicker from '../components/common/MarqueeTicker';
-import TheProblemSection from '../components/home/TheProblemSection';
+import EditorialGridSection from '../components/home/EditorialGridSection';
 import InteractiveShoeSliderSection from '../components/home/InteractiveShoeSliderSection';
 import TheApproachSection from '../components/home/TheApproachSection';
 import ValidationProofSection from '../components/home/ValidationProofSection';
 import HeroProductFeature from '../components/home/HeroProductFeature';
 import CollectionPreview from '../components/home/CollectionPreview';
-import EditorialGridSection from '../components/home/EditorialGridSection';
+import WhatTheyAreSayingSection from '../components/home/WhatTheyAreSayingSection';
+import AsAppreciatedOnSection from '../components/home/AsAppreciatedOnSection';
+import TheProblemSection from '../components/home/TheProblemSection';
 import SocialProofStrip from '../components/home/SocialProofStrip';
 import ConversionBlock from '../components/home/ConversionBlock';
 
@@ -18,37 +21,44 @@ const HomePage = () => {
 
   return (
     <main className="min-h-screen bg-brand-cream overflow-hidden">
-      {/* Module 1: Light Hero Scrub Animation */}
-      <HeroScrubSection />
+      {/* ── Module 1: Upgrade GSAP Hero Section ── */}
+      {/* <HeroScrubSection /> (Commented out for reference) */}
+      <NewHeroSection />
 
       {/* Kinetic DTC Marquee Ticker */}
       <MarqueeTicker />
 
-      {/* Module 2: The Problem (THE GAP Apple Bento Grid) */}
-      <TheProblemSection />
-
-      {/* CUSTOM SKETCH SECTION: Interactive Variant Stage Card Slider */}
-      <InteractiveShoeSliderSection />
-
-      {/* Module 3: The Approach (HOW WE BUILD) */}
-      <TheApproachSection />
-
-      {/* Module 4: Validation / Proof (FDDI Biomechanical Studio) */}
-      <ValidationProofSection />
-
-      {/* Module 5: Hero Product Feature (Article X Stage) */}
-      <HeroProductFeature />
-
-      {/* Module 6: Collection Preview */}
-      <CollectionPreview />
-
-      {/* Module 6.5: Editorial Collection Grid (WearComet Inspired) */}
+      {/* Section 02: Editorial Collection Grid (2x2 WearComet Inspired Grid) */}
       <EditorialGridSection />
 
-      {/* Module 7: Social Proof Strip (FDDI Credibility) */}
+      {/* Section 03: The Problem (THE GAP IN FOOTWEAR Apple Bento Grid) */}
+      <TheProblemSection />
+
+      {/* Section 04: The Approach (HOW WE BUILD) */}
+      <TheApproachSection />
+
+      {/* Section 05: Validation / Proof (FDDI Biomechanical Studio) */}
+      <ValidationProofSection />
+
+      {/* Section 06: Hero Product Feature (Article X Stage) */}
+      <HeroProductFeature />
+
+      {/* Section 07: Interactive Variant Stage Card Slider */}
+      <InteractiveShoeSliderSection />
+
+      {/* Section 08: Collection Preview */}
+      <CollectionPreview />
+
+      {/* Section 09: Community Proof (WHAT THEY'RE SAYING?) */}
+      <WhatTheyAreSayingSection />
+
+      {/* Media Press Banner: AS APPRECIATED ON */}
+      <AsAppreciatedOnSection />
+
+      {/* Section 10: Social Proof Strip (FDDI Credibility) */}
       <SocialProofStrip />
 
-      {/* Module 8: Conversion Block (Waitlist / Early Access) */}
+      {/* Section 11: Conversion Block (Waitlist / Early Access) */}
       <ConversionBlock />
     </main>
   );
