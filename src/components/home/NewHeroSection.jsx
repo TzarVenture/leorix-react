@@ -37,7 +37,6 @@ const HERO_VARIANTS = [
 const NewHeroSection = () => {
   const { mode } = useStore();
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   // GSAP Refs
   const stageRef = useRef(null);
@@ -72,7 +71,7 @@ const NewHeroSection = () => {
         { y: 0, opacity: 0.9, duration: 0.7, delay: 0.38, ease: 'power2.out' }
       );
 
-      // Continuous Floating Levitation Loop (Runs on levitation wrapper 24/7)
+      // Continuous Floating Levitation Loop (Runs 24/7 on levitation wrapper)
       gsap.to(levitationRef.current, {
         y: -14,
         rotate: 1.5,
@@ -96,18 +95,18 @@ const NewHeroSection = () => {
     return () => ctx.revert();
   }, []);
 
-  // 2. Stable Clockwork Timer Engine (2.0s Interval)
+  // 2. Unstoppable Clockwork Auto-Timer Engine (2.0s Interval)
   useEffect(() => {
-    if (isPaused) return;
-
     const timer = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % HERO_VARIANTS.length);
+      if (document.visibilityState === 'visible') {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % HERO_VARIANTS.length);
+      }
     }, 2000);
 
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, []);
 
-  // 3. Pre-rendered Multi-Image Layer GSAP Transition (Ultra-fast ZAP IN, 2s cycle pause)
+  // 3. Pre-rendered Multi-Image Layer GSAP Transition (100% Flicker-Free)
   useEffect(() => {
     HERO_VARIANTS.forEach((_, idx) => {
       const el = shoeRefs.current[idx];
@@ -153,10 +152,6 @@ const NewHeroSection = () => {
   return (
     <section
       ref={stageRef}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
       className="relative w-full h-[76vh] min-h-[480px] max-h-[660px] bg-brand-green text-brand-cream overflow-hidden flex items-center border-b border-brand-tan/20 select-none cursor-default"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(46,62,49,0.92) 35%, rgba(30,43,33,0.75)), url(${heroBgNew})`,
