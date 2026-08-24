@@ -116,7 +116,7 @@ const HeroProductFeature = () => {
                   className="w-full py-3 bg-brand-tan text-brand-green font-bold text-[11px] sm:text-xs uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream active:scale-95 transition-all flex items-center justify-center gap-1.5 rounded-full shadow-xl cursor-pointer"
                 >
                   <Eye className="w-4 h-4" />
-                  <span>Preview Ground X →</span>
+                  <span>Preview →</span>
                 </Link>
               ) : (
                 <button

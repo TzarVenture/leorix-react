@@ -315,7 +315,7 @@ const InteractiveShoeSliderSection = () => {
                     className="flex-1 py-2.5 sm:py-3 bg-brand-green text-brand-cream text-[10px] sm:text-[11px] font-bold uppercase tracking-widest rounded-full flex items-center justify-center gap-1.5 hover:bg-brand-ink active:scale-95 transition-all shadow-sm"
                   >
                     <Eye className="w-3.5 h-3.5" />
-                    Preview spec
+                    Preview
                   </Link>
                 ) : (
                   <button

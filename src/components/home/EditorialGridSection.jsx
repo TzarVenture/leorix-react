@@ -73,10 +73,10 @@ const EditorialGridSection = () => {
               </h3>
             </div>
 
-            {/* Bottom Right "SHOP NOW" / "PREVIEW SPEC" Link */}
+            {/* Bottom Right "SHOP NOW" / "PREVIEW" Link */}
             <div className="absolute bottom-2.5 right-3 sm:bottom-6 sm:right-8 z-10">
               <span className="font-sans font-bold text-[8px] xs:text-[9px] sm:text-xs text-white uppercase tracking-widest border-b border-white/70 pb-0.5 group-hover:border-white group-hover:text-brand-tan transition-colors drop-shadow-md">
-                {mode === 'phaseA' ? 'PREVIEW SPEC' : 'SHOP NOW'}
+                {mode === 'phaseA' ? 'PREVIEW' : 'SHOP NOW'}
               </span>
             </div>
           </Link>
