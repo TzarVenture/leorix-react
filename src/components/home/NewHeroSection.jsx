@@ -152,7 +152,7 @@ const NewHeroSection = () => {
   return (
     <section
       ref={stageRef}
-      className="relative w-full h-auto py-8 sm:py-10 md:py-8 lg:py-10 md:min-h-[420px] lg:min-h-[460px] md:max-h-[540px] lg:max-h-[580px] bg-brand-green text-brand-cream overflow-hidden flex items-center border-b border-brand-tan/20 select-none cursor-default"
+      className="relative w-full h-[calc(90svh-88px)] min-h-[500px] sm:min-h-[560px] md:h-auto md:min-h-[460px] lg:min-h-[500px] md:max-h-[580px] lg:max-h-[620px] bg-brand-green text-brand-cream overflow-hidden flex items-center border-b border-brand-tan/20 select-none cursor-default py-6 sm:py-8 md:py-8 lg:py-10"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(46,62,49,0.92) 35%, rgba(30,43,33,0.75)), url(${heroBgNew})`,
         backgroundSize: 'cover',
@@ -163,14 +163,14 @@ const NewHeroSection = () => {
       {/* Ambient Spotlight */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(206,176,138,0.20),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 md:gap-8 items-center">
           
           {/* ── LEFT COLUMN: HEADING, SUBTITLE & CTA BUTTON ── */}
-          <div className="md:col-span-6 space-y-2.5 sm:space-y-3.5 text-center md:text-left flex flex-col items-center md:items-start justify-center">
+          <div className="md:col-span-6 space-y-3 sm:space-y-4 text-center md:text-left flex flex-col items-center md:items-start justify-center">
             
             {/* Main Bold Heading — Mixed Case #BeLeorix */}
-            <h1 className="font-sans font-black text-2xl sm:text-3xl md:text-3xl lg:text-[2.25rem] xl:text-[2.5rem] tracking-tight leading-[1.2] sm:leading-[1.24] lg:leading-[1.26] text-center md:text-left drop-shadow-md">
+            <h1 className="font-sans font-black text-2xl xs:text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-[2.65rem] tracking-tight leading-[1.18] sm:leading-[1.22] lg:leading-[1.24] text-center md:text-left drop-shadow-md">
               <span className="block overflow-hidden pb-0.5 sm:pb-1">
                 <span ref={line1Ref} className="block text-brand-tan transform-gpu normal-case">
                   #BeLeorix
@@ -183,17 +183,17 @@ const NewHeroSection = () => {
               </span>
             </h1>
 
-            {/* Subheading — Compact & Centered on Mobile */}
-            <p ref={subTextRef} className="font-sans text-xs sm:text-sm text-brand-tan font-medium max-w-xs sm:max-w-md md:max-w-xl leading-relaxed text-center md:text-left mx-auto md:mx-0 opacity-90 transform-gpu">
+            {/* Subheading — Bold & Well Proportioned */}
+            <p ref={subTextRef} className="font-sans text-xs xs:text-sm sm:text-base text-brand-tan font-medium max-w-xs sm:max-w-md md:max-w-xl leading-relaxed text-center md:text-left mx-auto md:mx-0 opacity-90 transform-gpu">
               Where refined design meets engineering precision, tested and validated for everyday performance
             </p>
 
             {/* CTA Action Button — Centered on Mobile */}
-            <div className="pt-1.5 flex justify-center md:justify-start w-full">
+            <div className="pt-1.5 sm:pt-2 flex justify-center md:justify-start w-full">
               {mode === 'phaseA' ? (
                 <Link
                   to="/vault"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 xs:px-7 xs:py-3 sm:px-8 sm:py-3.5 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs sm:text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
                 >
                   <span>Join priority list</span>
                   <ArrowRight className="w-4 h-4" />
@@ -201,7 +201,7 @@ const NewHeroSection = () => {
               ) : (
                 <Link
                   to="/shop/men"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 xs:px-7 xs:py-3 sm:px-8 sm:py-3.5 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs sm:text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
                 >
                   <span>Shop the drop</span>
                   <ArrowRight className="w-4 h-4" />
@@ -212,16 +212,16 @@ const NewHeroSection = () => {
           </div>
 
           {/* ── RIGHT COLUMN: STACKED DOM GSAP ANIMATED SHOE STAGE ── */}
-          <div className="md:col-span-6 relative flex items-center justify-center min-h-[220px] sm:min-h-[260px] md:min-h-[340px]">
+          <div className="md:col-span-6 relative flex items-center justify-center min-h-[200px] xs:min-h-[230px] sm:min-h-[280px] md:min-h-[350px]">
             
             {/* GSAP Interactive Shoe Stage */}
-            <div className="relative w-full max-w-[260px] xs:max-w-[300px] sm:max-w-[400px] md:max-w-[480px] flex items-center justify-center">
+            <div className="relative w-full max-w-[270px] xs:max-w-[320px] sm:max-w-[420px] md:max-w-[500px] flex items-center justify-center">
               
               {/* Radial Backdrop Glow */}
-              <div className="absolute w-44 h-44 sm:w-72 sm:h-72 rounded-full bg-brand-tan/15 blur-2xl -z-10 pointer-events-none" />
+              <div className="absolute w-44 h-44 sm:w-76 sm:h-76 rounded-full bg-brand-tan/15 blur-2xl -z-10 pointer-events-none" />
 
               {/* Dedicated Levitation Wrapper (Infinite float loop 24/7) */}
-              <div ref={levitationRef} className="relative w-full h-[200px] sm:h-[260px] md:h-[320px] lg:h-[340px] flex items-center justify-center transform-gpu">
+              <div ref={levitationRef} className="relative w-full h-[195px] xs:h-[230px] sm:h-[280px] md:h-[340px] lg:h-[360px] flex items-center justify-center transform-gpu">
                 {/* Pre-rendered Stacked Variant Images (Zero DOM re-mounting, 100% GPU accelerated) */}
                 {HERO_VARIANTS.map((variant, idx) => (
                   <img
@@ -231,7 +231,7 @@ const NewHeroSection = () => {
                     alt={`LEORIX Article X — ${variant.name}`}
                     fetchpriority="high"
                     decoding="async"
-                    className="absolute inset-0 m-auto w-full h-auto max-h-[190px] sm:max-h-[250px] md:max-h-[310px] lg:max-h-[330px] object-contain drop-shadow-[0_16px_26px_rgba(0,0,0,0.60)] select-none pointer-events-none transform-gpu opacity-0"
+                    className="absolute inset-0 m-auto w-full h-auto max-h-[185px] xs:max-h-[215px] sm:max-h-[270px] md:max-h-[330px] lg:max-h-[350px] object-contain drop-shadow-[0_16px_26px_rgba(0,0,0,0.60)] select-none pointer-events-none transform-gpu opacity-0"
                   />
                 ))}
               </div>
