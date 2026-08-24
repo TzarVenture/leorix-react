@@ -71,32 +71,27 @@ const CollectionPreview = () => {
   };
 
   return (
-    <section id="collection" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden">
+    <section id="collection" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden bg-grid-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Eyebrow - Section 08 */}
-        <div className="eyebrow flex items-baseline gap-3 border-t border-brand-tan-line pt-1.5 mb-2 sm:mb-3">
-          <span className="eyebrow-idx font-mono text-brand-green text-[11px] sm:text-xs">08</span>
-          <span className="eyebrow-lbl text-brand-stone text-[10px] sm:text-xs uppercase tracking-widest">COLLECTION PREVIEW</span>
-        </div>
-
-        {/* Header & Gender Filter Pills */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 sm:mb-6 gap-3">
-          <div className="space-y-1">
-            <h2 className="font-serif-display text-2xl sm:text-4xl lg:text-5xl font-normal text-brand-green leading-tight">
-              The first range.
-            </h2>
-            <p className="font-sans text-[11px] sm:text-xs text-brand-ink/80 max-w-lg leading-relaxed">
-              Five men's and five women's variants, engineered on one single validated platform.
-            </p>
+        {/* Eyebrow + Filter Pills + Arrow Controls Horizontally Aligned in One Row */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-brand-tan-line pt-2 mb-4 sm:mb-6">
+          
+          {/* Eyebrow — Section 03 (No Headline, No Body) */}
+          <div className="flex items-baseline gap-3">
+            <span className="eyebrow-idx font-mono text-brand-green text-[11px] sm:text-xs">03</span>
+            <span className="eyebrow-lbl text-brand-stone text-[10px] sm:text-xs uppercase tracking-widest font-bold">
+              The First Range.
+            </span>
           </div>
 
-          <div className="flex items-center gap-3 self-start md:self-auto">
+          {/* Filter Pills + Left Right Arrow Switchers (Horizontally Aligned) */}
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Filter Tabs */}
-            <div className="flex items-center gap-1 bg-white p-1 rounded-full border border-stone-200 font-mono text-[10px] sm:text-xs font-bold uppercase shadow-xs">
+            <div className="flex items-center gap-1 bg-white p-1 rounded-full border border-stone-200 font-mono text-[9px] sm:text-xs font-bold uppercase shadow-xs">
               <button
                 onClick={() => setFilter('all')}
-                className={`px-3.5 py-1.5 rounded-full transition-all ${
+                className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full transition-all cursor-pointer ${
                   filter === 'all' ? 'bg-brand-green text-brand-cream shadow-md' : 'text-brand-stone hover:text-brand-ink'
                 }`}
               >
@@ -104,7 +99,7 @@ const CollectionPreview = () => {
               </button>
               <button
                 onClick={() => setFilter('men')}
-                className={`px-3.5 py-1.5 rounded-full transition-all ${
+                className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full transition-all cursor-pointer ${
                   filter === 'men' ? 'bg-brand-green text-brand-cream shadow-md' : 'text-brand-stone hover:text-brand-ink'
                 }`}
               >
@@ -112,7 +107,7 @@ const CollectionPreview = () => {
               </button>
               <button
                 onClick={() => setFilter('women')}
-                className={`px-3.5 py-1.5 rounded-full transition-all ${
+                className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full transition-all cursor-pointer ${
                   filter === 'women' ? 'bg-brand-green text-brand-cream shadow-md' : 'text-brand-stone hover:text-brand-ink'
                 }`}
               >
@@ -121,23 +116,24 @@ const CollectionPreview = () => {
             </div>
 
             {/* Scroll Controls */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1 sm:gap-1.5">
               <button
                 onClick={scrollLeft}
-                className="p-2 rounded-full border border-stone-300 bg-white hover:bg-brand-green hover:text-brand-cream hover:border-brand-green active:scale-90 transition-all text-brand-ink shadow-xs"
+                className="p-1.5 sm:p-2 rounded-full border border-stone-300 bg-white hover:bg-brand-green hover:text-brand-cream hover:border-brand-green active:scale-90 transition-all text-brand-ink shadow-xs cursor-pointer"
                 aria-label="Scroll left"
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
               <button
                 onClick={scrollRight}
-                className="p-2 rounded-full border border-stone-300 bg-white hover:bg-brand-green hover:text-brand-cream hover:border-brand-green active:scale-90 transition-all text-brand-ink shadow-xs"
+                className="p-1.5 sm:p-2 rounded-full border border-stone-300 bg-white hover:bg-brand-green hover:text-brand-cream hover:border-brand-green active:scale-90 transition-all text-brand-ink shadow-xs cursor-pointer"
                 aria-label="Scroll right"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>
+
         </div>
 
         {/* Single-Row Horizontal Touch & Drag Carousel Track */}
@@ -168,55 +164,31 @@ const CollectionPreview = () => {
                   </span>
                 </div>
 
-                {/* Thumbnail */}
-                <div className="my-1.5 aspect-[4/2.5] flex items-center justify-center bg-stone-50 rounded-xl p-2.5 group-hover:scale-105 transition-transform duration-500 relative overflow-hidden max-h-[140px] sm:max-h-[160px]">
+                {/* Single Clean Thumbnail Image (Seamless Pure White Card Background) */}
+                <div className="my-2 aspect-[4/2.6] flex items-center justify-center bg-white rounded-xl p-3 group-hover:scale-105 transition-transform duration-500 relative overflow-hidden max-h-[150px] sm:max-h-[170px]">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-contain filter drop-shadow-md"
                   />
-                  
-                  <div className="absolute bottom-1.5 left-1.5 flex items-center gap-1 bg-brand-ink/90 text-brand-cream border border-brand-tan/30 px-2 py-0.5 rounded-full text-[8px] font-mono shadow-xs backdrop-blur-xs">
-                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: product.colorHex }} />
-                    <span className="truncate max-w-[110px]">{product.colorName}</span>
-                  </div>
                 </div>
-
-                <h3 className="font-serif-display font-normal text-lg sm:text-xl text-brand-ink mb-0.5 truncate">
-                  {product.name}
-                </h3>
-                <p className="text-[10px] sm:text-[11px] text-brand-ink/80 mb-2 font-sans line-clamp-1">
-                  {product.shortDesc}
-                </p>
               </div>
 
+              {/* Bottom Card Bar: Model Name (Ground X) + Colourway | CTA button */}
               <div className="pt-2.5 border-t border-stone-200 flex items-center justify-between gap-2">
                 <div>
-                  {mode === 'phaseA' ? (
-                    <div>
-                      <span className="text-[9px] font-mono font-bold text-brand-green uppercase tracking-wider block leading-tight">
-                        Phase A
-                      </span>
-                      <span className="text-[7.5px] font-mono text-brand-stone uppercase tracking-widest block font-semibold">
-                        Pre-launch
-                      </span>
-                    </div>
-                  ) : (
-                    <>
-                      <span className="font-sans font-bold text-base sm:text-lg text-brand-green block leading-none">
-                        {product.price}
-                      </span>
-                      <span className="text-[8px] font-mono text-brand-stone uppercase font-semibold">
-                        In Stock
-                      </span>
-                    </>
-                  )}
+                  <span className="text-[10px] sm:text-[11px] font-mono font-bold text-brand-green uppercase tracking-wider block leading-tight">
+                    Ground X
+                  </span>
+                  <span className="text-[8.5px] sm:text-[9.5px] font-mono text-brand-stone uppercase tracking-widest block font-semibold mt-0.5">
+                    {product.colorName}
+                  </span>
                 </div>
 
                 {mode === 'phaseA' ? (
                   <Link
                     to={`/product/${product.id}`}
-                    className="px-4 py-1.5 bg-brand-tan text-brand-green font-bold text-[9px] sm:text-[10px] uppercase tracking-wider hover:bg-brand-green hover:text-brand-cream active:scale-95 transition-all rounded-full flex items-center gap-1 shadow-md flex-shrink-0"
+                    className="px-4 py-1.5 bg-brand-tan text-brand-green font-bold text-[9px] sm:text-[10px] uppercase tracking-wider hover:bg-brand-green hover:text-brand-cream active:scale-95 transition-all rounded-full flex items-center gap-1 shadow-md flex-shrink-0 cursor-pointer"
                   >
                     <Eye className="w-3 h-3" />
                     <span>Preview</span>
@@ -224,7 +196,7 @@ const CollectionPreview = () => {
                 ) : (
                   <button
                     onClick={() => addToCart(product, product.sizes[0])}
-                    className="px-4 py-1.5 bg-brand-tan text-brand-green font-bold text-[9px] sm:text-[10px] uppercase tracking-wider hover:bg-brand-green hover:text-brand-cream active:scale-95 transition-all rounded-full flex items-center gap-1 shadow-md flex-shrink-0"
+                    className="px-4 py-1.5 bg-brand-tan text-brand-green font-bold text-[9px] sm:text-[10px] uppercase tracking-wider hover:bg-brand-green hover:text-brand-cream active:scale-95 transition-all rounded-full flex items-center gap-1 shadow-md flex-shrink-0 cursor-pointer"
                   >
                     <ShoppingBag className="w-3 h-3" />
                     <span>Add to Bag</span>

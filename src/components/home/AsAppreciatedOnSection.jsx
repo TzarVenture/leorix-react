@@ -54,12 +54,12 @@ const MEDIA_BRANDS = [
 
 const AsAppreciatedOnSection = () => {
   return (
-    <section id="media-press" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden">
+    <section id="media-press" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden bg-grid-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Standard LEORIX Eyebrow */}
+        {/* Eyebrow — Section 11 */}
         <div className="eyebrow flex items-baseline gap-3 border-t border-brand-tan-line pt-1.5 mb-2 sm:mb-3">
-          <span className="eyebrow-idx font-mono text-brand-green text-[11px] sm:text-xs">PRESS</span>
+          <span className="eyebrow-idx font-mono text-brand-green text-[11px] sm:text-xs">11</span>
           <span className="eyebrow-lbl text-brand-stone text-[10px] sm:text-xs uppercase tracking-widest">AS APPRECIATED ON</span>
         </div>
 
@@ -71,13 +71,14 @@ const AsAppreciatedOnSection = () => {
           </h2>
         </div>
 
-        {/* Highly Responsive Media Brand Strip Container */}
-        <div className="bg-white/90 p-4 sm:py-6 sm:px-8 rounded-2xl sm:rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
-          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-6 items-center justify-items-center gap-y-4 gap-x-2 sm:gap-6 lg:gap-8 select-none w-full">
-            {MEDIA_BRANDS.map((brand) => (
+        {/* Continuous Horizontally Moving Marquee Ticker Track */}
+        <div className="bg-white/90 py-4 sm:py-6 rounded-2xl sm:rounded-3xl border border-stone-200 shadow-sm overflow-hidden select-none">
+          <div className="animate-marquee flex items-center gap-12 sm:gap-16 whitespace-nowrap">
+            {/* Duplicate array for seamless infinite marquee loop */}
+            {[...MEDIA_BRANDS, ...MEDIA_BRANDS, ...MEDIA_BRANDS].map((brand, idx) => (
               <div
-                key={brand.name}
-                className="flex items-center justify-center filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105"
+                key={`${brand.name}-${idx}`}
+                className="flex items-center justify-center filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105 px-4"
                 title={`Featured in ${brand.name}`}
               >
                 {brand.render()}

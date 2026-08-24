@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStore } from '../../context/StoreContext';
-import { Sparkles, ShieldCheck } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AnnouncementBar = () => {
@@ -20,20 +20,15 @@ const AnnouncementBar = () => {
           ) : (
             <p className="font-sans font-medium text-[10px] xs:text-[11px] sm:text-xs">
               <span className="font-bold text-brand-cream">Live Store:</span>{' '}
-              <span className="text-brand-tan">Free shipping across India on all orders.</span>
+              <span className="text-brand-tan">Free shipping across India.</span>
             </p>
           )}
         </div>
 
         <div className="hidden md:flex items-center gap-4 text-[11px] font-mono">
-          <Link to="/technology" className="text-brand-cream/80 hover:text-brand-tan transition-colors flex items-center gap-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-brand-tan" />
-            <span>FDDI Scope</span>
-          </Link>
-
           <button
             onClick={toggleMode}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-brand-tan/50 bg-brand-tan/10 text-brand-tan hover:bg-brand-tan hover:text-brand-green transition-all font-bold uppercase text-[10px] tracking-wider"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-brand-tan/50 bg-brand-tan/10 text-brand-tan hover:bg-brand-tan hover:text-brand-green transition-all font-bold uppercase text-[10px] tracking-wider cursor-pointer"
           >
             <Sparkles className="w-3 h-3" />
             <span>Mode: {mode === 'phaseA' ? 'Phase A (Waitlist)' : 'Phase B (Live)'}</span>

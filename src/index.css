@@ -112,3 +112,10 @@
   -ms-overflow-style: none;
 }
 .scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* CAD Grid Background Utility */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(46, 62, 49, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(46, 62, 49, 0.05) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}

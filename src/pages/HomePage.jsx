@@ -1,65 +1,64 @@
 import React, { useEffect } from 'react';
-// import HeroScrubSection from '../components/home/HeroScrubSection';
+import { useStore } from '../context/StoreContext';
 import NewHeroSection from '../components/home/NewHeroSection';
 import MarqueeTicker from '../components/common/MarqueeTicker';
 import EditorialGridSection from '../components/home/EditorialGridSection';
-import InteractiveShoeSliderSection from '../components/home/InteractiveShoeSliderSection';
-import TheApproachSection from '../components/home/TheApproachSection';
-import ValidationProofSection from '../components/home/ValidationProofSection';
-import HeroProductFeature from '../components/home/HeroProductFeature';
 import CollectionPreview from '../components/home/CollectionPreview';
+import HeroProductFeature from '../components/home/HeroProductFeature';
+import VideoBannerSection from '../components/home/VideoBannerSection';
+import ValidationProofSection from '../components/home/ValidationProofSection';
+import InteractiveShoeSliderSection from '../components/home/InteractiveShoeSliderSection';
+import ConversionBlock from '../components/home/ConversionBlock';
+import TheApproachSection from '../components/home/TheApproachSection';
 import WhatTheyAreSayingSection from '../components/home/WhatTheyAreSayingSection';
 import AsAppreciatedOnSection from '../components/home/AsAppreciatedOnSection';
-import TheProblemSection from '../components/home/TheProblemSection';
-import SocialProofStrip from '../components/home/SocialProofStrip';
-import ConversionBlock from '../components/home/ConversionBlock';
 
 const HomePage = () => {
+  const { mode } = useStore();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <main className="min-h-screen bg-brand-cream overflow-hidden">
-      {/* ── Module 1: Upgrade GSAP Hero Section ── */}
-      {/* <HeroScrubSection /> (Commented out for reference) */}
+      {/* Module 1: Hero Section */}
       <NewHeroSection />
 
       {/* Kinetic DTC Marquee Ticker */}
       <MarqueeTicker />
 
-      {/* Section 02: Editorial Collection Grid (2x2 WearComet Inspired Grid) */}
+      {/* Module 2: Category Grid */}
       <EditorialGridSection />
 
-      {/* Section 03: The Problem (THE GAP IN FOOTWEAR Apple Bento Grid) */}
-      <TheProblemSection />
-
-      {/* Section 04: The Approach (HOW WE BUILD) */}
-      <TheApproachSection />
-
-      {/* Section 05: Validation / Proof (FDDI Biomechanical Studio) */}
-      <ValidationProofSection />
-
-      {/* Section 06: Hero Product Feature (Article X Stage) */}
-      <HeroProductFeature />
-
-      {/* Section 07: Interactive Variant Stage Card Slider */}
-      <InteractiveShoeSliderSection />
-
-      {/* Section 08: Collection Preview */}
+      {/* Module 3: Collection Preview */}
       <CollectionPreview />
 
-      {/* Section 09: Community Proof (WHAT THEY'RE SAYING?) */}
-      <WhatTheyAreSayingSection />
+      {/* Module 4: Product Spotlight (Ground X) */}
+      <HeroProductFeature />
 
-      {/* Media Press Banner: AS APPRECIATED ON */}
-      <AsAppreciatedOnSection />
+      {/* Module 5: New Space Video Banner */}
+      <VideoBannerSection />
 
-      {/* Section 10: Social Proof Strip (FDDI Credibility) */}
-      <SocialProofStrip />
+      {/* Module 6: FDDI Validation Studio */}
+      <ValidationProofSection />
 
-      {/* Section 11: Conversion Block (Waitlist / Early Access) */}
+      {/* Module 7: Colourway Stage */}
+      <InteractiveShoeSliderSection />
+
+      {/* Module 8: Priority Access / Conversion Block */}
       <ConversionBlock />
+
+      {/* Module 9: The Approach (HOW WE BUILD) */}
+      <TheApproachSection />
+
+      {/* Phase 2 Live Store Only Sections ("What They're Saying" & "As Appreciated On") */}
+      {mode !== 'phaseA' && (
+        <>
+          <WhatTheyAreSayingSection />
+          <AsAppreciatedOnSection />
+        </>
+      )}
     </main>
   );
 };

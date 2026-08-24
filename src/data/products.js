@@ -18,7 +18,7 @@ export const HERO_PRODUCT = {
   colors: [
     { name: 'White & Green Accent', hex: '#F4EFE6', image: shoeWhiteGreen, code: 'WG-01' },
     { name: 'Warm Tan & Green', hex: '#CEB08A', image: shoeGreenWhite, code: 'WG-02' },
-    { name: 'Forest Green', hex: '#2E3E31', image: shoeGreen, code: 'FG-03' },
+    { name: 'Dark Green', hex: '#2E3E31', image: shoeGreen, code: 'DG-03' },
     { name: 'Obsidian Black', hex: '#1A211C', image: shoeBlack, code: 'OB-04' },
     { name: 'Alabaster White', hex: '#EAE6DF', image: shoeWhite, code: 'AW-05' }
   ],

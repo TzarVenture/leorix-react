@@ -43,9 +43,9 @@ const Navbar = ({ onOpenHelp }) => {
       }`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
-          {/* Logo / Wordmark in High Contrast Ink */}
+          {/* Logo / Wordmark in High Contrast Ink — Prominent Sizing on Desktop */}
           <Link to="/" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
-            <span className="font-sans font-black text-xl tracking-tight text-brand-ink uppercase transition-transform group-hover:scale-102">
+            <span className="font-sans font-black text-xl md:text-2xl lg:text-3xl tracking-tight text-brand-ink uppercase transition-transform group-hover:scale-102">
               LEORIX
             </span>
           </Link>
@@ -81,20 +81,20 @@ const Navbar = ({ onOpenHelp }) => {
                     to="/shop/men"
                     className="block px-4 py-2.5 rounded-full text-xs text-brand-ink hover:bg-brand-cream hover:text-brand-green transition-colors font-semibold"
                   >
-                    MEN'S CATALOG
+                    Men
                   </Link>
                   <Link
                     to="/shop/women"
                     className="block px-4 py-2.5 rounded-full text-xs text-brand-ink hover:bg-brand-cream hover:text-brand-green transition-colors font-semibold"
                   >
-                    WOMEN'S CATALOG
+                    Women
                   </Link>
                   <div className="border-t border-stone-200 my-1" />
                   <Link
                     to="/vault"
                     className="block px-4 py-2.5 rounded-full text-xs text-brand-green hover:bg-brand-cream font-bold tracking-wider flex items-center justify-between"
                   >
-                    <span>THE VAULT</span>
+                    <span>The Vault</span>
                     <span className="text-[9px] bg-brand-green/10 px-2.5 py-0.5 rounded-full border border-brand-green/20 font-bold">PIONEERS</span>
                   </Link>
                 </div>

@@ -10,25 +10,25 @@ import img04 from '../../../img/img04.webp';
 const EDITORIAL_ITEMS = [
   {
     id: 'editorial-1',
-    title: 'X LOWS',
+    title: 'Ground X',
     image: img01,
     link: '/product/leorix-article-x',
   },
   {
     id: 'editorial-2',
-    title: 'APEX',
+    title: 'Pivot',
     image: img02,
     link: '/product/leorix-article-x',
   },
   {
     id: 'editorial-3',
-    title: 'AEON',
+    title: 'Drift',
     image: img03,
     link: '/product/leorix-article-x',
   },
   {
     id: 'editorial-4',
-    title: 'AERES',
+    title: 'Ballast',
     image: img04,
     link: '/product/leorix-article-x',
   },
@@ -45,7 +45,7 @@ const EditorialGridSection = () => {
           <Link
             key={item.id}
             to={item.link}
-            className="group relative w-full h-full overflow-hidden block select-none bg-black cursor-pointer border-r border-b border-stone-800/40"
+            className="group relative w-full h-full overflow-hidden block select-none bg-black cursor-pointer border border-stone-800/80"
           >
             {/* Background Image with Smooth Hover Zoom */}
             <img
