@@ -70,17 +70,17 @@ const InteractiveShoeSliderSection = () => {
   const isMobile = viewportWidth < 640;
   const isTablet = viewportWidth >= 640 && viewportWidth < 1024;
   
-  const cardWidth = isMobile ? 220 : (isTablet ? 240 : 270);
-  const spacing = isMobile ? 200 : (isTablet ? 250 : 300);
-  const containerHeight = isMobile ? '310px' : (isTablet ? '330px' : '360px');
-  const shoeTop = isMobile ? '-58px' : (isTablet ? '-62px' : '-65px');
-  const shoeWidth = isMobile ? 200 : (isTablet ? 200 : 220);
-  const shoeHeight = isMobile ? 105 : (isTablet ? 105 : 110);
+  const cardWidth = isMobile ? 190 : (isTablet ? 240 : 270);
+  const spacing = isMobile ? 170 : (isTablet ? 250 : 300);
+  const containerHeight = isMobile ? '255px' : (isTablet ? '330px' : '360px');
+  const shoeTop = isMobile ? '-32px' : (isTablet ? '-62px' : '-65px');
+  const shoeWidth = isMobile ? 170 : (isTablet ? 200 : 220);
+  const shoeHeight = isMobile ? 90 : (isTablet ? 105 : 110);
 
   return (
     <section
       id="variant-stage"
-      className="py-5 sm:py-10 lg:py-12 bg-brand-cream border-b border-brand-tan-soft relative overflow-hidden"
+      className="pt-4 pb-2 sm:py-8 lg:py-10 bg-brand-cream border-b border-brand-tan-soft relative overflow-hidden bg-grid-pattern"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -111,24 +111,21 @@ const InteractiveShoeSliderSection = () => {
 
             {/* MOBILE STAGE 1 / DESKTOP RIGHT: 3D Shoe Carousel */}
             <div
-              className="order-1 lg:order-2 lg:col-span-7 bg-stone-50 flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 border-stone-200 relative select-none"
-              style={{ minHeight: isMobile ? '310px' : '380px', touchAction: 'pan-y' }}
+              className="order-1 lg:order-2 lg:col-span-7 bg-stone-50 flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 border-stone-200 relative select-none pt-2 sm:pt-0"
+              style={{ minHeight: isMobile ? '260px' : '380px', touchAction: 'pan-y' }}
               onTouchStart={onTouchStart}
               onTouchEnd={onTouchEnd}
             >
               {/* Studio Spotlight Radial Glow Behind Active Shoe */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(206,176,138,0.28)_0%,transparent_70%)] pointer-events-none opacity-80" />
 
-              {/* Mobile Interactive Color Swatch Selector Bar */}
-              <div className="md:hidden w-full flex items-center justify-center gap-2.5 py-2 bg-stone-100/90 border-b border-stone-200/80 relative z-30">
-                <span className="text-[9px] font-mono font-bold text-brand-stone uppercase tracking-wider mr-1">
-                  Colorway:
-                </span>
+              {/* Mobile Interactive Color Swatch Selector Bar — Center Aligned (No Colorway Text) */}
+              <div className="md:hidden w-full flex items-center justify-center gap-3 py-2 bg-stone-100/90 border-b border-stone-200/80 relative z-30">
                 {cards.map((card, idx) => (
                   <button
                     key={card.id}
                     onClick={() => setActiveIndex(idx)}
-                    className={`w-6 h-6 rounded-full border-2 transition-all flex items-center justify-center ${
+                    className={`w-6 h-6 rounded-full border-2 transition-all flex items-center justify-center cursor-pointer ${
                       idx === activeIndex
                         ? 'border-brand-green scale-115 shadow-md ring-2 ring-brand-tan/60'
                         : 'border-stone-300 opacity-60 hover:opacity-100'

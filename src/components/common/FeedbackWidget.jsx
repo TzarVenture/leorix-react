@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, X, CheckCircle2, MessageSquare, Send } from 'lucide-react';
 import { useStore } from '../../context/StoreContext';
 
@@ -19,6 +19,33 @@ const FeedbackWidget = () => {
   const [comment, setComment] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if on home page
+      const isHome = window.location.pathname === '/' || window.location.pathname === '';
+      if (!isHome) {
+        setIsVisible(false);
+        return;
+      }
+
+      // Measure Hero section height dynamically
+      const heroEl = document.querySelector('section');
+      const heroHeight = heroEl ? heroEl.offsetHeight : 450;
+
+      // Show feedback widget ONLY within the Hero section height
+      if (window.scrollY < heroHeight - 60) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,9 +69,11 @@ const FeedbackWidget = () => {
     }, 3500);
   };
 
+  if (!isVisible && !isOpen) return null;
+
   return (
     <>
-      {/* ── Ultra-Slim Screen-Edge Vertical Feedback Tab ── */}
+      {/* ── Ultra-Slim Screen-Edge Vertical Feedback Tab (Hero Section Pinned) ── */}
       <button
         type="button"
         onClick={() => setIsOpen(true)}
@@ -77,7 +106,7 @@ const FeedbackWidget = () => {
           {/* Close X Button */}
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-3.5 right-3.5 p-1 rounded-full bg-stone-100 text-stone-600 hover:bg-brand-green hover:text-brand-cream transition-colors"
+            className="absolute top-3.5 right-3.5 p-1 rounded-full bg-stone-100 text-stone-600 hover:bg-brand-green hover:text-brand-cream transition-colors cursor-pointer"
             aria-label="Close Feedback"
           >
             <X className="w-4 h-4" />
@@ -110,7 +139,7 @@ const FeedbackWidget = () => {
                       onClick={() => setRating(star)}
                       onMouseEnter={() => setHoverRating(star)}
                       onMouseLeave={() => setHoverRating(0)}
-                      className="p-1 transform hover:scale-125 transition-transform"
+                      className="p-1 transform hover:scale-125 transition-transform cursor-pointer"
                     >
                       <Star
                         className={`w-6 h-6 ${
@@ -143,10 +172,10 @@ const FeedbackWidget = () => {
                       key={cat}
                       type="button"
                       onClick={() => setCategory(category === cat ? '' : cat)}
-                      className={`text-[10px] font-mono px-2 py-0.5 rounded-full border transition-all ${
+                      className={`px-2.5 py-1 rounded-full text-[9px] font-mono transition-colors cursor-pointer ${
                         category === cat
-                          ? 'bg-brand-green text-brand-cream border-brand-green font-bold shadow-xs'
-                          : 'bg-stone-100 text-brand-ink font-semibold border-stone-300 hover:border-brand-green hover:bg-stone-200/60'
+                          ? 'bg-brand-green text-brand-tan font-bold'
+                          : 'bg-stone-100 text-stone-600 hover:bg-brand-cream hover:text-brand-green'
                       }`}
                     >
                       {cat}
@@ -155,54 +184,55 @@ const FeedbackWidget = () => {
                 </div>
               </div>
 
-              {/* Comment Textarea */}
+              {/* Comment Input */}
               <div className="space-y-1">
+                <label className="font-mono text-[10px] font-black text-brand-green uppercase tracking-wider block">
+                  Your Suggestions / Thoughts
+                </label>
                 <textarea
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
-                  placeholder="Tell us what you loved or what we can improve..."
-                  rows={3}
-                  className="w-full text-xs font-sans font-medium p-2.5 rounded-xl bg-stone-50 border border-stone-300 focus:border-brand-green focus:bg-white focus:ring-1 focus:ring-brand-green/20 focus:outline-none transition-all resize-none text-brand-ink placeholder:text-stone-500 placeholder:font-normal"
+                  placeholder="Tell us what you love or what we should improve..."
+                  rows={2}
+                  className="w-full bg-stone-50 border border-stone-300 p-2.5 rounded-xl text-xs text-brand-ink placeholder:text-stone-400 focus:outline-none focus:border-brand-green resize-none"
                 />
               </div>
 
               {/* Email Input */}
-              <div>
+              <div className="space-y-1">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email (optional, for updates)"
-                  className="w-full text-xs font-sans font-medium px-3 py-2 rounded-lg bg-stone-50 border border-stone-300 focus:border-brand-green focus:bg-white focus:ring-1 focus:ring-brand-green/20 focus:outline-none transition-all text-brand-ink placeholder:text-stone-500 placeholder:font-normal"
+                  placeholder="Your Email (Optional, for follow-up)"
+                  className="w-full bg-stone-50 border border-stone-300 px-3 py-2 rounded-xl text-xs text-brand-ink placeholder:text-stone-400 focus:outline-none focus:border-brand-green"
                 />
               </div>
 
-              {/* Submit CTA */}
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-2.5 rounded-full bg-brand-tan text-brand-green font-mono font-black text-xs uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream transition-all shadow-md flex items-center justify-center gap-2 group cursor-pointer"
+                className="w-full py-2.5 bg-brand-green text-brand-tan font-bold text-xs uppercase tracking-widest hover:bg-brand-ink transition-colors rounded-full flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
               >
                 <span>Submit Feedback</span>
-                <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                <Send className="w-3.5 h-3.5" />
               </button>
             </form>
           ) : (
-            /* ── Success Screen ── */
-            <div className="py-6 text-center space-y-2.5">
+            /* Success Confirmation View */
+            <div className="py-8 text-center space-y-3">
               <div className="w-12 h-12 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mx-auto">
-                <CheckCircle2 className="w-7 h-7" />
+                <CheckCircle2 className="w-7 h-7 text-brand-green" />
               </div>
-              <h4 className="font-serif-display text-lg font-normal text-brand-green">
-                Thank You!
+              <h4 className="font-serif-display text-lg text-brand-green">
+                Feedback Recorded!
               </h4>
-              <p className="font-sans text-xs font-medium text-brand-ink/80 max-w-xs mx-auto">
-                Your feedback directly shapes our biomechanics lab and footwear releases.
+              <p className="text-xs text-brand-stone max-w-xs mx-auto leading-relaxed">
+                Thank you for helping us shape LEORIX. Our engineering & product team reads every submission.
               </p>
-              <span className="font-mono text-[9px] font-bold text-brand-stone uppercase tracking-widest block pt-1">
-                Closing in a moment...
-              </span>
             </div>
           )}
+
         </div>
       )}
     </>

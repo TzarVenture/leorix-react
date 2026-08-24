@@ -48,18 +48,15 @@ const WhatTheyAreSayingSection = () => {
 
   return (
     <section id="reviews" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden">
-      {/* Tech Blueprint Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ceb08a15_1px,transparent_1px),linear-gradient(to_bottom,#ceb08a15_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Eyebrow - Section 09 */}
+        {/* Eyebrow — Section 10 */}
         <div className="eyebrow flex items-baseline gap-3 border-t border-brand-tan-line pt-1.5 mb-2 sm:mb-3">
-          <span className="eyebrow-idx font-mono text-brand-green text-[11px] sm:text-xs">09</span>
+          <span className="eyebrow-idx font-mono text-brand-green text-[11px] sm:text-xs">10</span>
           <span className="eyebrow-lbl text-brand-stone text-[10px] sm:text-xs uppercase tracking-widest">COMMUNITY PROOF</span>
         </div>
 
-        {/* Section Headline - Official LEORIX Fraunces Serif Title */}
+        {/* Section Headline */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-6 gap-2">
           <div>
             <h2 className="font-serif-display text-2xl sm:text-4xl lg:text-5xl font-normal text-brand-green leading-tight">
