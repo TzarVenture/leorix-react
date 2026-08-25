@@ -152,7 +152,7 @@ const NewHeroSection = () => {
   return (
     <section
       ref={stageRef}
-      className="relative w-full min-h-[calc(95svh-88px)] h-auto md:h-auto md:min-h-[500px] lg:min-h-[560px] md:max-h-[660px] lg:max-h-[720px] bg-brand-green text-brand-cream overflow-hidden flex items-center border-b border-brand-tan/20 select-none cursor-default py-9 sm:py-14 md:py-10 lg:py-14"
+      className="relative w-full min-h-[calc(94svh-88px)] h-auto md:h-[68vh] md:min-h-[460px] md:max-h-[540px] lg:max-h-[560px] bg-brand-green text-brand-cream overflow-hidden flex items-center border-b border-brand-tan/20 select-none cursor-default py-8 sm:py-12 md:py-8 lg:py-10"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(46,62,49,0.92) 35%, rgba(30,43,33,0.75)), url(${heroBgNew})`,
         backgroundSize: 'cover',
@@ -164,13 +164,13 @@ const NewHeroSection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(206,176,138,0.20),transparent_60%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
           
           {/* ── LEFT COLUMN: HEADING, SUBTITLE & CTA BUTTON ── */}
-          <div className="md:col-span-6 space-y-4 sm:space-y-5 text-center md:text-left flex flex-col items-center md:items-start justify-center">
+          <div className="md:col-span-6 space-y-3.5 sm:space-y-4 text-center md:text-left flex flex-col items-center md:items-start justify-center">
             
             {/* Main Bold Heading — Mixed Case #BeLeorix */}
-            <h1 className="font-sans font-black text-[1.65rem] xs:text-[2rem] sm:text-4xl md:text-3xl lg:text-[2.65rem] xl:text-[2.9rem] tracking-tight leading-[1.18] sm:leading-[1.22] lg:leading-[1.24] text-center md:text-left drop-shadow-md">
+            <h1 className="font-sans font-black text-[1.65rem] xs:text-[2rem] sm:text-4xl md:text-3xl lg:text-[2.35rem] xl:text-[2.5rem] tracking-tight leading-[1.18] sm:leading-[1.22] lg:leading-[1.24] text-center md:text-left drop-shadow-md">
               <span className="block overflow-hidden pb-0.5 sm:pb-1">
                 <span ref={line1Ref} className="block text-brand-tan transform-gpu normal-case">
                   #BeLeorix
@@ -189,11 +189,11 @@ const NewHeroSection = () => {
             </p>
 
             {/* CTA Action Button — Centered on Mobile */}
-            <div className="pt-2 sm:pt-3 flex justify-center md:justify-start w-full">
+            <div className="pt-2 sm:pt-2.5 flex justify-center md:justify-start w-full">
               {mode === 'phaseA' ? (
                 <Link
                   to="/vault"
-                  className="inline-flex items-center gap-2 px-6 py-3 xs:px-7 xs:py-3.5 sm:px-8 sm:py-4 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs sm:text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 xs:px-7 xs:py-3.5 sm:px-8 sm:py-3.5 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
                 >
                   <span>Join the movement</span>
                   <ArrowRight className="w-4 h-4" />
@@ -201,7 +201,7 @@ const NewHeroSection = () => {
               ) : (
                 <Link
                   to="/shop/men"
-                  className="inline-flex items-center gap-2 px-6 py-3 xs:px-7 xs:py-3.5 sm:px-8 sm:py-4 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs sm:text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 xs:px-7 xs:py-3.5 sm:px-8 sm:py-3.5 rounded-full bg-brand-tan text-brand-green font-sans font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:scale-105 active:scale-95 transition-all shadow-xl border border-brand-tan/40 cursor-pointer"
                 >
                   <span>Shop the drop</span>
                   <ArrowRight className="w-4 h-4" />
@@ -212,16 +212,16 @@ const NewHeroSection = () => {
           </div>
 
           {/* ── RIGHT COLUMN: STACKED DOM GSAP ANIMATED SHOE STAGE ── */}
-          <div className="md:col-span-6 relative flex items-center justify-center min-h-[230px] xs:min-h-[270px] sm:min-h-[310px] md:min-h-[370px]">
+          <div className="md:col-span-6 relative flex items-center justify-center min-h-[220px] xs:min-h-[260px] sm:min-h-[300px] md:min-h-[340px]">
             
             {/* GSAP Interactive Shoe Stage */}
-            <div className="relative w-full max-w-[310px] xs:max-w-[360px] sm:max-w-[450px] md:max-w-[530px] flex items-center justify-center">
+            <div className="relative w-full max-w-[290px] xs:max-w-[340px] sm:max-w-[440px] md:max-w-[490px] flex items-center justify-center">
               
               {/* Radial Backdrop Glow */}
-              <div className="absolute w-52 h-52 sm:w-80 sm:h-80 rounded-full bg-brand-tan/15 blur-2xl -z-10 pointer-events-none" />
+              <div className="absolute w-48 h-48 sm:w-76 sm:h-76 rounded-full bg-brand-tan/15 blur-2xl -z-10 pointer-events-none" />
 
               {/* Dedicated Levitation Wrapper (Infinite float loop 24/7) */}
-              <div ref={levitationRef} className="relative w-full h-[235px] xs:h-[275px] sm:h-[310px] md:h-[360px] lg:h-[400px] flex items-center justify-center transform-gpu">
+              <div ref={levitationRef} className="relative w-full h-[235px] xs:h-[275px] sm:h-[310px] md:h-[330px] lg:h-[360px] flex items-center justify-center transform-gpu">
                 {/* Pre-rendered Stacked Variant Images (Zero DOM re-mounting, 100% GPU accelerated) */}
                 {HERO_VARIANTS.map((variant, idx) => (
                   <img
@@ -231,7 +231,7 @@ const NewHeroSection = () => {
                     alt={`LEORIX Article X — ${variant.name}`}
                     fetchpriority="high"
                     decoding="async"
-                    className="absolute inset-0 m-auto w-full h-auto max-h-[225px] xs:max-h-[260px] sm:max-h-[295px] md:max-h-[350px] lg:max-h-[390px] object-contain drop-shadow-[0_16px_26px_rgba(0,0,0,0.60)] select-none pointer-events-none transform-gpu opacity-0"
+                    className="absolute inset-0 m-auto w-full h-auto max-h-[225px] xs:max-h-[260px] sm:max-h-[295px] md:max-h-[320px] lg:max-h-[350px] object-contain drop-shadow-[0_16px_26px_rgba(0,0,0,0.60)] select-none pointer-events-none transform-gpu opacity-0"
                   />
                 ))}
               </div>
