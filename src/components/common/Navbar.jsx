@@ -45,7 +45,7 @@ const Navbar = ({ onOpenHelp }) => {
           
           {/* Logo / Wordmark in High Contrast Ink — Prominent Sizing on Desktop */}
           <Link to="/" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
-            <span className="font-sans font-black text-xl md:text-2xl lg:text-3xl tracking-tight text-brand-ink uppercase transition-transform group-hover:scale-102">
+            <span className="font-['Poppins'] font-black text-xl md:text-2xl lg:text-3xl tracking-tight text-brand-ink uppercase transition-transform group-hover:scale-102">
               LEORIX
             </span>
           </Link>
