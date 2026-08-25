@@ -33,21 +33,6 @@ const ValidationProofSection = () => {
       ctx.fillStyle = '#1A211C';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.strokeStyle = 'rgba(206, 176, 138, 0.12)';
-      ctx.lineWidth = 1;
-      for (let x = 0; x < canvas.width; x += 25) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-      for (let y = 0; y < canvas.height; y += 25) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-
       const isLeorix = selectedPreset === 'leorix';
 
       // 1. Heel Contact Region

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const TheApproachSection = () => {
   return (
-    <section id="the-approach" className="py-6 sm:py-10 lg:py-12 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden bg-grid-pattern">
+    <section id="the-approach" className="py-6 sm:py-10 lg:py-12 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Eyebrow — Section 09 */}

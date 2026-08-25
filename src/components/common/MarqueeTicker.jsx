@@ -4,7 +4,7 @@ import { Sparkles, ShieldCheck } from 'lucide-react';
 const MarqueeTicker = () => {
   const tickerItems = [
     "ENGINEERED FROM THE SOLE UP",
-    "FDDI VALIDATED PLATFORM",
+    "BIOMECHANICALLY TUNED PLATFORM",
     "12-HOUR ALL-DAY COMFORT",
     "MONOPLATE V1 ARCHITECTURE",
     "CONTROLLED MIDFOOT TORSION",

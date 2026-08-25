@@ -26,7 +26,7 @@ const CollectionPreview = () => {
   };
 
   return (
-    <section id="collection" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden bg-grid-pattern select-none">
+    <section id="collection" className="py-4 sm:py-6 lg:py-8 bg-brand-cream text-brand-ink border-b border-brand-tan-soft relative overflow-hidden select-none">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Eyebrow + Filter Pills + Arrow Controls Horizontally Aligned in One Row */}

@@ -7,7 +7,7 @@ const VideoBannerSection = () => {
   const { mode } = useStore();
 
   return (
-    <section id="cinema-banner" className="w-full relative bg-brand-ink text-brand-cream py-16 sm:py-24 overflow-hidden border-b border-brand-tan/20 bg-grid-pattern">
+    <section id="cinema-banner" className="w-full relative bg-brand-ink text-brand-cream py-16 sm:py-24 overflow-hidden border-b border-brand-tan/20">
       {/* Ambient Video / Motion Graphic Background Backdrop */}
       <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,rgba(46,62,49,0.8),rgba(26,33,28,1))]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(206,176,138,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(206,176,138,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />

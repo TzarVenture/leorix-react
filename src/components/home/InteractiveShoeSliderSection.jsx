@@ -80,7 +80,7 @@ const InteractiveShoeSliderSection = () => {
   return (
     <section
       id="variant-stage"
-      className="pt-4 pb-2 sm:py-8 lg:py-10 bg-brand-cream border-b border-brand-tan-soft relative overflow-hidden bg-grid-pattern"
+      className="pt-4 pb-2 sm:py-8 lg:py-10 bg-brand-cream border-b border-brand-tan-soft relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
