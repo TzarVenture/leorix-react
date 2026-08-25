@@ -52,7 +52,7 @@ const Footer = ({ onOpenHelp }) => {
               </h3>
             </div>
             <p className="text-xs text-brand-cream/90 leading-relaxed">
-              Register to receive early notification prior to product drops, founder pricing, and complete laboratory test reports.
+              Register to receive early notification prior to product drops, early access, and complete laboratory test reports.
             </p>
 
             {submitted || hasJoinedWaitlist ? (

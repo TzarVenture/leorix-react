@@ -38,7 +38,7 @@ const ConversionBlock = () => {
               </h2>
 
               <p className="font-sans text-xs xs:text-sm sm:text-base text-white/90 leading-relaxed max-w-xl">
-                Join the list for early access to the first drop, founder pricing, and the validation data as it's published.
+                Join the list for early access to the first drop, priority reservations, and the validation data as it's published.
               </p>
 
               {/* Counters */}

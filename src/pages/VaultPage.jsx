@@ -39,7 +39,7 @@ const VaultPage = () => {
           </h1>
 
           <p className="font-serif-display italic text-base sm:text-lg text-brand-ink leading-relaxed">
-            Early access to drops, founder pricing, and the validation data before it's public. The list becomes the inside track.
+            Early access to drops, priority allocation, and the validation data before it's public. The list becomes the inside track.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ const VaultPage = () => {
             </div>
           </div>
 
-          {/* Card 2: Founder Pricing */}
+          {/* Card 2: Founder Tier */}
           <div className="bg-white border border-stone-200 hover:border-brand-green hover:shadow-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-4 sm:space-y-6 transition-all duration-300 group">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-cream flex items-center justify-center border border-stone-200 group-hover:bg-brand-green/10 group-hover:border-brand-green/20 transition-all duration-300">
               <Tag className="w-5 h-5 text-brand-green" />
@@ -71,7 +71,7 @@ const VaultPage = () => {
                 Founder Tier
               </h3>
               <p className="text-xs text-brand-stone leading-relaxed font-sans font-normal">
-                Exclusive founder tier pricing reserved for initial registered pioneers of Drop 01. We value early adopters.
+                Exclusive pioneer allocation reserved for initial registered pioneers of Drop 01. We value early adopters.
               </p>
             </div>
           </div>
